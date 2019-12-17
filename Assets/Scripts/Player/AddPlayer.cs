@@ -13,10 +13,9 @@ public class AddPlayer : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            other.GetComponent<PlayerEntity>().partOfSwarm = true;
-            _player.dudes.Add(other.GetComponent<PlayerEntity>());
-        }
+        if (other.gameObject.tag != "Player") return;
+        if (!(other.GetComponent<PlayerEntity>().time >= 3)) return;
+        other.GetComponent<PlayerEntity>().partOfSwarm = true;
+        _player.dudes.Add(other.GetComponent<PlayerEntity>());
     }
 }

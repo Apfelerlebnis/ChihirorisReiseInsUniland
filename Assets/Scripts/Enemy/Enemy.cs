@@ -7,11 +7,14 @@ public class Enemy : MonoBehaviour
 {
     private PlayerManagerModule _player;
     private Vector3 _startPos;
+    [SerializeField] private Collider _dmg;
     public bool sleeping;
     public bool canMove;
     public float minHittingDistance;
     public float minDistance;
     public float minDistanceSleeping;
+    private float _time;
+    public float timeBetweenAttacks;
 
     void Start()
     {
@@ -21,6 +24,12 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        _time += Time.deltaTime;
+        if (_time >= 0.5f)
+        {
+            _dmg.GetComponent<SphereCollider>().radius = 0.1f;
+        }
+
         if (Vector3.Distance(_player.GetCenterPosition(), transform.position) < minDistance && !sleeping && canMove)
         {
             FollowPlayer();
@@ -52,6 +61,8 @@ public class Enemy : MonoBehaviour
 
     private void HitPlayer()
     {
-        
+        if (!(_time >= timeBetweenAttacks)) return;
+        _dmg.GetComponent<SphereCollider>().radius = minHittingDistance;
+        _time = 0;
     }
 }
