@@ -9,6 +9,7 @@ public class PlayerEntity : MonoBehaviour
     public bool isMoving = false;
     private PlayerManagerModule _playerManagerModule;
     [SerializeField] private float _swarmSpread;
+    public bool partOfSwarm = false;
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class PlayerEntity : MonoBehaviour
 
     void Update()
     {
-        if (!isMoving)
+        if (!isMoving && partOfSwarm)
         {
             GetComponent<NavMeshAgent>().destination = new Vector3(
                 _playerManagerModule.currentLeader.position.x + Random.Range(-_swarmSpread, _swarmSpread),

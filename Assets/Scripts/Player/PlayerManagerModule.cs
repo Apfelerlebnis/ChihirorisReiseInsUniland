@@ -9,20 +9,13 @@ using UnityEngine.AI;
 public class PlayerManagerModule : ManagerModule
 {
     public List<PlayerEntity> dudes = new List<PlayerEntity>();
-    [SerializeField] private float _timeToNewLeader;
     public float speed = 8;
-    private float _time;
     public Transform currentLeader;
     private Vector3 _move;
     [SerializeField] private Transform _cameraEmpty;
 
     void Update()
     {
-        _time += Time.deltaTime;
-        if (_time >= _timeToNewLeader)
-        {
-            _time = 0;
-        }
         MovePlayer();
         _cameraEmpty.position = GetCenterPosition();
     }
