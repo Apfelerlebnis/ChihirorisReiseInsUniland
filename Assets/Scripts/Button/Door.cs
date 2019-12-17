@@ -25,24 +25,20 @@ public class Door : MonoBehaviour
     [ContextMenu("Open Door")]
     public void OpenDoor()
     {
-        DOTween.Clear();
-        if (!_isOpen)
-        {
-            _isOpen = true;
-            doorLeft.transform.DOMove(doorLeftOpen.position, 1);
-            doorRight.transform.DOMove(doorRightOpen.position, 1);
-        }
+        //DOTween.Clear();
+        if (_isOpen) return;
+        _isOpen = true;
+        doorLeft.transform.DOMove(doorLeftOpen.position, 1);
+        doorRight.transform.DOMove(doorRightOpen.position, 1);
     }
 
     [ContextMenu("Close Door")]
     public void CloseDoor()
     {
-        DOTween.Clear();
-        if (_isOpen)
-        {
-            _isOpen = false;
-            doorLeft.transform.DOMove(_doorLeftPos, 1);
-            doorRight.transform.DOMove(_doorRightPos, 1);
-        }
+        //DOTween.Clear();
+        if (!_isOpen) return;
+        _isOpen = false;
+        doorLeft.transform.DOMove(_doorLeftPos, 1);
+        doorRight.transform.DOMove(_doorRightPos, 1);
     }
 }

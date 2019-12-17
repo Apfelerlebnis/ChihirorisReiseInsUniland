@@ -1,7 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerManagerModule : ManagerModule
 {
@@ -11,21 +14,17 @@ public class PlayerManagerModule : ManagerModule
     private float _time;
     public Transform currentLeader;
     private Vector3 _move;
-
-    void Start()
-    {
-        //ChangeLeader();
-    }
+    [SerializeField] private Transform _cameraEmpty;
 
     void Update()
     {
         _time += Time.deltaTime;
         if (_time >= _timeToNewLeader)
         {
-            //ChangeLeader();
             _time = 0;
         }
         MovePlayer();
+        _cameraEmpty.position = GetCenterPosition();
     }
 
     private void MovePlayer()
@@ -56,7 +55,7 @@ public class PlayerManagerModule : ManagerModule
             _move.z = Mathf.Sqrt(_move.z);
         }
 
-        if (_move.magnitude == 0)
+        if (Math.Abs(_move.magnitude) < 0)
         {
             foreach (PlayerEntity dude in dudes)
             {
@@ -73,5 +72,11 @@ public class PlayerManagerModule : ManagerModule
 
         currentLeader.transform.position += _move * Time.deltaTime;
         _move = Vector3.zero;
+    }
+
+    public Vector3 GetCenterPosition()
+    {
+        Vector3 result = dudes.Aggregate(Vector3.zero, (current, playerEntity) => current + playerEntity.transform.position);
+        return result / dudes.Count;
     }
 }
