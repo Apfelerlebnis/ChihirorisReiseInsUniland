@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2884412328635714833}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0, z: -0.29}
+  m_LocalPosition: {x: 0.43, y: 0, z: -2.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2884412330494897669}
@@ -73,7 +73,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2884412329274046937
 GameObject:
@@ -99,7 +99,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2884412329274046937}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4, y: 0, z: -0.29}
+  m_LocalPosition: {x: 30.39, y: 0, z: -20.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2884412330047094109}
@@ -150,11 +150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03155fd50d0d15f46b0a962c2f604c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dudes: []
+  dudes:
+  - {fileID: 0}
   speed: 3
   currentLeader: {fileID: 2884412329274046936}
   _cameraEmpty: {fileID: 2884412328635714832}
   immuneTimeAfterHit: 2
+  _deathScreen: {fileID: 0}
 --- !u!1 &2884412330494897664
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2884412330494897664}
   m_LocalRotation: {x: 0.46176422, y: -0, z: -0, w: 0.8870027}
-  m_LocalPosition: {x: -2.316, y: 9.86, z: -9.71}
+  m_LocalPosition: {x: -0.102, y: 5.2, z: -3.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2884412328635714832}
