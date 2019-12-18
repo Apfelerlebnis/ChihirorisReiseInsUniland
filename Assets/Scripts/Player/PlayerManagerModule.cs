@@ -15,14 +15,29 @@ public class PlayerManagerModule : ManagerModule
     public Transform currentLeader;
     private Vector3 _move;
     [SerializeField] private Transform _cameraEmpty;
-    private float _time;
-    [SerializeField] private float immuneTimeAfterHit;
+    private float _time = 0;
+    [SerializeField] private float immuneTimeAfterHit = 2;
+    [SerializeField] private Canvas _deathScreen;
+    private bool _dead = false;
 
     void Update()
     {
-        MovePlayer();
+        if (!_dead)
+        {
+            MovePlayer();
+        }
         _cameraEmpty.position = GetCenterPosition();
         //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
+        CheckIfDead();
+    }
+
+    private void CheckIfDead()
+    {
+        if (dudes.Count == 0)
+        {
+            _deathScreen.gameObject.SetActive(true);
+            _dead = true;
+        }
     }
 
     private void MovePlayer()
@@ -70,7 +85,16 @@ public class PlayerManagerModule : ManagerModule
             }
         }
 
-        currentLeader.transform.position += _move * Time.deltaTime;
+        if (dudes.Count == 1)
+        {
+            dudes[0].transform.position += _move * Time.deltaTime; 
+            currentLeader.transform.position += _move * Time.deltaTime;
+            dudes[0].isMoving = false;
+        }
+        else
+        {
+            currentLeader.transform.position += _move * Time.deltaTime;
+        }
         _move = Vector3.zero;
     }
 

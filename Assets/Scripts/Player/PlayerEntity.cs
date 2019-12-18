@@ -8,7 +8,7 @@ public class PlayerEntity : MonoBehaviour
 {
     public bool isMoving = false;
     private PlayerManagerModule _playerManagerModule;
-    [SerializeField] private float _swarmSpread;
+    [SerializeField] private float _swarmSpread = 1;
     public bool partOfSwarm = false;
     public float time = 0;
 

@@ -8,13 +8,13 @@ public class Enemy : MonoBehaviour
     private PlayerManagerModule _player;
     private Vector3 _startPos;
     [SerializeField] private Collider _dmg;
-    public bool sleeping;
-    public bool canMove;
-    public float minHittingDistance;
-    public float minDistance;
-    public float minDistanceSleeping;
-    private float _time;
-    public float timeBetweenAttacks;
+    public bool sleeping = false;
+    public bool canMove = true;
+    public float minHittingDistance = 1;
+    public float minDistance = 3;
+    public float minDistanceSleeping = 2;
+    private float _time = 0;
+    public float timeBetweenAttacks = 2;
 
     void Start()
     {
