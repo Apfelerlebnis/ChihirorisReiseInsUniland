@@ -72,6 +72,7 @@ public class PlayerManagerModule : ManagerModule
 
         if (Math.Abs(_move.magnitude) == 0)
         {
+            currentLeader.position = GetCenterPosition();
             foreach (PlayerEntity dude in dudes)
             {
                 dude.isMoving = false;
