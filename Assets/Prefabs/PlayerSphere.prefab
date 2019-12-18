@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 09a247394fa71bb40abccb68cae26507, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isMoving: 0
   _swarmSpread: 0.5
-  partOfSwarm: 0
+  partOfSwarm: 1
   time: 0
 --- !u!195 &6707107686341064933
 NavMeshAgent:
