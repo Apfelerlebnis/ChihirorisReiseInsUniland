@@ -13,7 +13,7 @@ public class PlayerManagerModule : ManagerModule
     public List<PlayerEntity> dudes = new List<PlayerEntity>();
     public float speed = 8;
     public Transform currentLeader;
-    private Vector3 _move;
+    //private Vector3 _move;
     [SerializeField] private Transform _cameraEmpty;
     private float _time = 0;
     [SerializeField] private float immuneTimeAfterHit = 2;
@@ -46,37 +46,39 @@ public class PlayerManagerModule : ManagerModule
 
     private void MovePlayer()
     {
+        Vector3 _move = Vector3.zero;
         _time += Time.deltaTime;
 
         if (Input.GetKey("a"))
         {
-            _move.x = -speed;
+            _move.x = -1;
         }
 
         if (Input.GetKey("d"))
         {
-            _move.x = +speed;
+            _move.x = +1;
         }
 
         if (Input.GetKey("w"))
         {
-            _move.z = speed;
+            _move.z = 1;
         }
 
         if (Input.GetKey("s"))
         {
-            _move.z = -speed;
+            _move.z = -1;
         }
 
-        if (_move.x > 0 && _move.z > 0)
+        /*if (_move.x > 0 && _move.z > 0)
         {
             _move.x = Mathf.Sqrt(_move.x);
             _move.z = Mathf.Sqrt(_move.z);
-        }
+        }*/
 
-        if (Math.Abs(_move.magnitude) == 0)
+        if (Math.Abs(_move.magnitude) <= 0.1)
         {
-            currentLeader.position = GetCenterPosition();
+            //currentLeader.position = GetCenterPosition();
+            currentLeader.position = _cameraEmpty.position;
             foreach (PlayerEntity dude in dudes)
             {
                 dude.isMoving = false;
@@ -88,9 +90,22 @@ public class PlayerManagerModule : ManagerModule
             {
                 dude.isMoving = true;
             }
+            Vector3 moveDir= _move.normalized * 1;
+            currentLeader.transform.position = GetCenterPosition() + moveDir;
+            RaycastHit hit;
+
+            int layerMask = (1 << 8) | (1 << 9); //8=player, 9=enemy
+            layerMask = ~layerMask; //invert -> not player
+            if (Physics.Raycast(new Ray(_cameraEmpty.position, moveDir), out hit, moveDir.magnitude, layerMask))
+            {
+                Debug.Log(hit.collider.name+" "+hit.point);
+                currentLeader.transform.position = hit.point;
+            }
         }
 
-        if (dudes.Count == 1)
+        
+
+        /*if (dudes.Count == 1)
         {
             dudes[0].transform.position += _move * Time.deltaTime; 
             currentLeader.transform.position += _move * Time.deltaTime;
@@ -99,8 +114,8 @@ public class PlayerManagerModule : ManagerModule
         else
         {
             currentLeader.transform.position += _move * Time.deltaTime;
-        }
-        _move = Vector3.zero;
+        }*/
+        // _move = Vector3.zero;
     }
 
     public Vector3 GetCenterPosition()
