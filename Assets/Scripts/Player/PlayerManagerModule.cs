@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -26,6 +27,9 @@ public class PlayerManagerModule : ManagerModule
             _time = 0;
         }
         MovePlayer();
+        Vector3 camPos = GetCenterPosition()+ new Vector3(0, 4, -2);
+        float newDistance = (_cameraEmpty.position - camPos).magnitude;
+        _cameraEmpty.position = Vector3.Lerp(_cameraEmpty.position, camPos, 0.1f);
     }
 
     private void MovePlayer()
@@ -73,5 +77,11 @@ public class PlayerManagerModule : ManagerModule
 
         currentLeader.transform.position += _move * Time.deltaTime;
         _move = Vector3.zero;
+    }
+
+    public Vector3 GetCenterPosition()
+    {
+        Vector3 result = dudes.Aggregate(new Vector3(0,0,0), (current, playerEntity) => current + playerEntity.transform.position);
+        return result / dudes.Count;
     }
 }
