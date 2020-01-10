@@ -32,11 +32,10 @@ public class PlayerEntity : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
-        {
-            _playerManagerModule.GotHit();
-        }
+        Enemy enemy = other.GetComponent<Enemy>();
+        if (enemy != null) _playerManagerModule.GotHit();
     }
+
 
     public void GoToRandomLocation()
     {

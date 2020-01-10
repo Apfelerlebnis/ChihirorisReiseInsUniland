@@ -11,11 +11,19 @@ public class AddPlayer : MonoBehaviour
         _player = GameManager.Instance.Get<PlayerManagerModule>();
     }
 
-    public void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag != "Player") return;
-        if (!(other.GetComponent<PlayerEntity>().time >= 3)) return;
-        other.GetComponent<PlayerEntity>().partOfSwarm = true;
-        _player.dudes.Add(other.GetComponent<PlayerEntity>());
+        
+        PlayerEntity player = other.GetComponent<PlayerEntity>();
+        if (player != null) OnCollidePlayer(player);
+    }
+
+    public void OnCollidePlayer(PlayerEntity player)
+    {
+        if (player == null) return;
+        if (!(player.time >= 3)) return;
+        player.partOfSwarm = true;
+
+        _player.dudes.Add(player);
     }
 }

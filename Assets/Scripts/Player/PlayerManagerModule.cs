@@ -26,7 +26,9 @@ public class PlayerManagerModule : ManagerModule
         {
             MovePlayer();
         }
-        _cameraEmpty.position = GetCenterPosition();
+        Vector3 camPos = GetCenterPosition();
+        float newDistance = (_cameraEmpty.position - camPos).magnitude;
+        _cameraEmpty.position = Vector3.Lerp(_cameraEmpty.position, camPos, 0.1f);
         //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
         CheckIfDead();
     }
@@ -38,6 +40,8 @@ public class PlayerManagerModule : ManagerModule
             _deathScreen.gameObject.SetActive(true);
             _dead = true;
         }
+        MovePlayer();
+        
     }
 
     private void MovePlayer()
