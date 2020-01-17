@@ -26,10 +26,12 @@ public class PlayerManagerModule : ManagerModule
         {
             MovePlayer();
         }
-        Vector3 camPos = GetCenterPosition();
-        float newDistance = (_cameraEmpty.position - camPos).magnitude;
-        _cameraEmpty.position = Vector3.Lerp(_cameraEmpty.position, camPos, 0.1f);
-        //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
+        if (dudes.Count>0) {
+            Vector3 camPos = GetCenterPosition();
+            float newDistance = (_cameraEmpty.position - camPos).magnitude;
+            _cameraEmpty.position = Vector3.Lerp(_cameraEmpty.position, camPos, 0.1f);
+            //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
+        }
         CheckIfDead();
     }
 
@@ -46,6 +48,8 @@ public class PlayerManagerModule : ManagerModule
 
     private void MovePlayer()
     {
+        if (dudes.Count <= 0) return;
+
         Vector3 _move = Vector3.zero;
         _time += Time.deltaTime;
 
