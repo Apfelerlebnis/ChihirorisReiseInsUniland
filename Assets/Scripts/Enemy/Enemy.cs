@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
 
     public Type enemyType;
     public State enemyState;
-    public float activationRange = 3; // for Standing, Sleeping, Patrolling;
+    public float activationRange = 3; // for Standing, Sleeping, Patrolling
     public float attackRange = 1;
     public float attackInterval = 0.5f;
     private float _attackTimer = 0;
