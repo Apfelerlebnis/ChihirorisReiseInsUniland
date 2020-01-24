@@ -128,13 +128,16 @@ public class PlayerManagerModule : ManagerModule
         return result / dudes.Count;
     }
 
-    public void GotHit()
+    public void GotHit(int damage)
     {
         if (_time < immuneTimeAfterHit) return;
         _time = 0;
-        if (dudes.Count <= 0) return;
 
-        dudes[Random.Range(0, dudes.Count)].Runaway();
-        //if (dudes.Count <= 0) DieScreen();
+        for (int i = 0; i < damage; i++)
+        {
+            if (dudes.Count <= 0) return;
+            dudes[Random.Range(0, dudes.Count)].Runaway();
+            //if (dudes.Count <= 0) DieScreen();
+        }
     }
 }

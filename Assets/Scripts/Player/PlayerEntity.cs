@@ -29,11 +29,11 @@ public class PlayerEntity : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        Enemy enemy = other.GetComponent<Enemy>();
-        if (enemy != null) _playerManagerModule.GotHit();
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    Enemy enemy = other.GetComponent<Enemy>();
+    //    if (enemy != null) _playerManagerModule.GotHit();
+    //}
 
 
     public void Runaway()

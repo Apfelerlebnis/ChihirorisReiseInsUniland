@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
     public Type enemyType;
     public State enemyState;
     private float _stateStartTime = 0f;
-
+    public int damage = 1;
     public float activationRange = 3; // for Standing, Sleeping, Patrolling;
     public float attackRange = 1;
     public float attackInterval = 0.5f;
@@ -80,8 +80,7 @@ public class Enemy : MonoBehaviour
         if (_attackTimer < attackInterval) return;
         _attackTimer = 0;
 
-
-        _player.GotHit();
+        _player.GotHit(damage);
     }
 
     private void FollowPlayer()
