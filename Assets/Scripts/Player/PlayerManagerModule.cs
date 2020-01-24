@@ -20,6 +20,8 @@ public class PlayerManagerModule : ManagerModule
     [SerializeField] private Canvas _deathScreen;
     private bool _dead = false;
 
+    public const int LevelLayerMask = ~((1 << 8) | (1 << 9)); //8=player, 9=enemy
+
     void Update()
     {
         if (!_dead)
@@ -98,9 +100,7 @@ public class PlayerManagerModule : ManagerModule
             currentLeader.transform.position = GetCenterPosition() + moveDir;
             RaycastHit hit;
 
-            int layerMask = (1 << 8) | (1 << 9); //8=player, 9=enemy
-            layerMask = ~layerMask; //invert -> not player
-            if (Physics.Raycast(new Ray(_cameraEmpty.position, moveDir), out hit, moveDir.magnitude, layerMask))
+            if (Physics.Raycast(new Ray(_cameraEmpty.position, moveDir), out hit, moveDir.magnitude, LevelLayerMask))
             {
                 //Debug.Log(hit.collider.name+" "+hit.point);
                 currentLeader.transform.position = hit.point;
@@ -134,7 +134,7 @@ public class PlayerManagerModule : ManagerModule
         _time = 0;
         if (dudes.Count <= 0) return;
 
-        dudes[Random.Range(0, dudes.Count)].GoToRandomLocation();
+        dudes[Random.Range(0, dudes.Count)].Runaway();
         //if (dudes.Count <= 0) DieScreen();
     }
 }

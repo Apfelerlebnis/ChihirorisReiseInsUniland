@@ -21,9 +21,10 @@ public class AddPlayer : MonoBehaviour
     public void OnCollidePlayer(PlayerEntity player)
     {
         if (player == null) return;
-        if (!(player.time >= 3)) return;
+        if (Time.time-player.runawayTime < 3) return;
         player.partOfSwarm = true;
 
+        if (_player.dudes.Contains(player)) return;
         _player.dudes.Add(player);
     }
 }
