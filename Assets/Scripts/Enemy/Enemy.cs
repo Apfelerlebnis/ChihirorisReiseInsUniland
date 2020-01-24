@@ -54,6 +54,7 @@ public class Enemy : MonoBehaviour
     public float homingSpeed = 0.5f;
     public float followDuration = 4.0f;
     private float _followTimer = 0;
+    private float _patrolTimer = 0;
 
     public List<Vector3> patrolPoints;
 
@@ -92,6 +93,34 @@ public class Enemy : MonoBehaviour
 
         //Debug.Log("Follow:" + _nav.destination + " -> " + _player.GetCenterPosition());
         _nav.destination = _player.GetCenterPosition();
+    }
+
+    void DoPatrol()
+    {
+        _patrolTimer += Time.deltaTime;
+        if (_patrolTimer < 1.0f) return;
+        _patrolTimer = 0;
+
+        int nearest = -1;
+        float minDist = 10000;
+        for (int i = 0;i<patrolPoints.Count;i++)
+        {
+            float dist = Vector3.Distance(patrolPoints[i], transform.position);
+            if(dist<minDist)
+            {
+                minDist = dist;
+                nearest = i;
+            }
+        }
+        if(nearest==-1)
+        {
+            Debug.LogError("PatrolEnemy has no waypoints!");
+            return;
+        }
+        nearest += 1;
+        if (nearest >= patrolPoints.Count) nearest = 0;
+        //nearest=(nearest+1)%patrolPoints.Count;
+        _nav.SetDestination(patrolPoints[nearest]);
     }
 
     bool CheckRange(float range) => CheckRange(range, transform.position);
@@ -133,34 +162,62 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    bool FollowAttackHome()
+    {
+        switch (enemyState)
+        {
+            case State.Following:
+                if (Time.time - _stateStartTime > followDuration) { ChangeState(State.Homing); return true; }
+                if (!CheckRange(activationRange + 1)) { ChangeState(State.Homing); return true; }
+                if (CheckRange(attackRange - 0.5f)) { ChangeState(State.Attacking); return true; }
+                FollowPlayer();
+                return true;
+            case State.Attacking:
+                if (!CheckRange(attackRange)) { ChangeState(State.Following); return true; }
+                if (CheckRange(attackRange)) DoAttack();
+                return true;
+            case State.Homing:
+                if (CheckRange(activationRange)) { ChangeState(State.Following); return true; }
+                if (_nav.destination != _startPos)
+                {
+                    //Debug.Log("Homing:"+ _nav.destination + " -> " + _startPos);
+                    _nav.destination = _startPos;
+                    return true;
+                }
+                if (_nav.isStopped) { ChangeState(State.Standing); return true; }
+                return true;
+        }
+        return false;
+    }
+
     void UpdateDefault()
     {
         if (CheckDying()) return;
+        if(FollowAttackHome()) return;
+
         switch (enemyState)
         {
             case State.Standing:
                 if (CheckRange(activationRange)) { ChangeState(State.Following); return; }
                 break;
-            case State.Following:
-                if (Time.time - _stateStartTime > followDuration) { ChangeState(State.Homing); return; }
-                if (!CheckRange(activationRange + 1)) { ChangeState(State.Homing); return; }
-                if (CheckRange(attackRange - 0.5f)) { ChangeState(State.Attacking); return; }
-                FollowPlayer();
-                break;
-            case State.Attacking:
-                if (!CheckRange(attackRange)) { ChangeState(State.Following); return; }
-                if (CheckRange(attackRange)) DoAttack();
-                break;
-            case State.Homing:
-                if (CheckRange(activationRange)) { ChangeState(State.Following); return; }
-                if (_nav.destination != _startPos) {
-                    //Debug.Log("Homing:"+ _nav.destination + " -> " + _startPos);
-                    _nav.destination = _startPos; 
-                    return; }
-                if (_nav.isStopped) { ChangeState(State.Standing); return; }
-                break;
             default:
                 ChangeState(State.Standing);
+                break;
+        }
+    }
+    void UpdatePatrol()
+    {
+        if (CheckDying()) return;
+        if (FollowAttackHome()) return;
+
+        switch (enemyState)
+        {
+            case State.Patrolling:
+                if (CheckRange(activationRange)) { ChangeState(State.Following); return; }
+                if (_nav.isStopped)              { DoPatrol(); return;}
+                break;
+            default:
+                ChangeState(State.Patrolling);
                 break;
         }
     }
@@ -177,6 +234,7 @@ public class Enemy : MonoBehaviour
         {
             case Type.Guard: UpdateGuard(); break;
             case Type.Default: UpdateDefault(); break;
+            case Type.Patrol: UpdatePatrol(); break;
 
         }
 
