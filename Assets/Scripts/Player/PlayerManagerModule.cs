@@ -20,7 +20,7 @@ public class PlayerManagerModule : ManagerModule
     [SerializeField] private Canvas _deathScreen;
     private bool _dead = false;
 
-    public const int LevelLayerMask = ~((1 << 8) | (1 << 9)); //8=player, 9=enemy
+    public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10)); //8=player, 9=enemy, 10=Trigger
 
     void Update()
     {

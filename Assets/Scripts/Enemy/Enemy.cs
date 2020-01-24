@@ -7,6 +7,7 @@ using System.Linq;
 public class Enemy : MonoBehaviour
 {
     private PlayerManagerModule _player;
+    private NavMeshAgent _nav;
     private Vector3 _startPos;
     /*[SerializeField] private Collider _dmg;
     public bool sleeping = false;
@@ -42,23 +43,34 @@ public class Enemy : MonoBehaviour
 
     public Type enemyType;
     public State enemyState;
+    private float _stateStartTime = 0f;
+
     public float activationRange = 3; // for Standing, Sleeping, Patrolling;
     public float attackRange = 1;
     public float attackInterval = 0.5f;
     private float _attackTimer = 0;
+
+    public float followSpeed = 1.5f;
+    public float homingSpeed = 0.5f;
+    public float followDuration = 4.0f;
+    private float _followTimer = 0;
+
     public List<Vector3> patrolPoints;
 
     void Start()
     {
         enemyState = State.Standing;
         _player = GameManager.Instance.Get<PlayerManagerModule>();
-        _startPos = transform.position;
+        _nav = GetComponent<NavMeshAgent>();
+        _startPos = _nav.destination;
 
         patrolPoints = GetComponentsInChildren<Waypoint>().Select(wp => wp.transform.position).ToList();
     }
 
     void ChangeState(State newState)
     {
+        if (newState == enemyState) return;
+        _stateStartTime = Time.time;
         enemyState = newState;
     }
 
@@ -72,18 +84,31 @@ public class Enemy : MonoBehaviour
         _player.GotHit();
     }
 
-    bool CheckRange(float range)
+    private void FollowPlayer()
     {
-        foreach(var dude in _player.dudes)
+        _followTimer += Time.deltaTime;
+        if (CheckRange(attackRange * 0.5f, _nav.destination)) return;
+        if (_followTimer < 0.5f) return;
+        _followTimer = 0;
+
+        //Debug.Log("Follow:" + _nav.destination + " -> " + _player.GetCenterPosition());
+        _nav.destination = _player.GetCenterPosition();
+    }
+
+    bool CheckRange(float range) => CheckRange(range, transform.position);
+    bool CheckRange(float range,Vector3 pos)
+    {
+        foreach (var dude in _player.dudes)
         {
             //Debug.Log("CheckR:"+ range+" --- "+ Vector3.Distance(dude.transform.position, transform.position));
-            if (Vector3.Distance(dude.transform.position, transform.position) < range)
+            if (Vector3.Distance(dude.transform.position, pos) < range)
             {
                 return true;
             }
         }
         return false;
     }
+
 
 
     // State machine
@@ -109,6 +134,38 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    void UpdateDefault()
+    {
+        if (CheckDying()) return;
+        switch (enemyState)
+        {
+            case State.Standing:
+                if (CheckRange(activationRange)) { ChangeState(State.Following); return; }
+                break;
+            case State.Following:
+                if (Time.time - _stateStartTime > followDuration) { ChangeState(State.Homing); return; }
+                if (!CheckRange(activationRange + 1)) { ChangeState(State.Homing); return; }
+                if (CheckRange(attackRange - 0.5f)) { ChangeState(State.Attacking); return; }
+                FollowPlayer();
+                break;
+            case State.Attacking:
+                if (!CheckRange(attackRange)) { ChangeState(State.Following); return; }
+                if (CheckRange(attackRange)) DoAttack();
+                break;
+            case State.Homing:
+                if (CheckRange(activationRange)) { ChangeState(State.Following); return; }
+                if (_nav.destination != _startPos) {
+                    //Debug.Log("Homing:"+ _nav.destination + " -> " + _startPos);
+                    _nav.destination = _startPos; 
+                    return; }
+                if (_nav.isStopped) { ChangeState(State.Standing); return; }
+                break;
+            default:
+                ChangeState(State.Standing);
+                break;
+        }
+    }
+
     bool CheckDying()
     {
         return false;
@@ -120,7 +177,8 @@ public class Enemy : MonoBehaviour
         switch (enemyType)
         {
             case Type.Guard: UpdateGuard(); break;
-             
+            case Type.Default: UpdateDefault(); break;
+
         }
 
 
@@ -143,7 +201,7 @@ public class Enemy : MonoBehaviour
         } 
         else if (canMove)
         {
-            GetComponent<NavMeshAgent>().destination = _startPos;
+            _nav.destination = _startPos;
         }
         
         if (Vector3.Distance(_player.GetCenterPosition(), transform.position) < minHittingDistance)
@@ -156,10 +214,7 @@ public class Enemy : MonoBehaviour
         }*/
     }
 
-    /*private void FollowPlayer()
-    {
-        GetComponent<NavMeshAgent>().destination = _player.GetCenterPosition();
-    }
+    /*
 
     private void HitPlayer()
     {

@@ -20,8 +20,6 @@ public class PlayerEntity : MonoBehaviour
 
     void Update()
     {
-        runawayTime += Time.deltaTime;
-
         if (isMoving && partOfSwarm)
         {
             GetComponent<NavMeshAgent>().destination = new Vector3(
