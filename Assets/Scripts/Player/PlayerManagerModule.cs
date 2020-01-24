@@ -102,7 +102,7 @@ public class PlayerManagerModule : ManagerModule
             layerMask = ~layerMask; //invert -> not player
             if (Physics.Raycast(new Ray(_cameraEmpty.position, moveDir), out hit, moveDir.magnitude, layerMask))
             {
-                Debug.Log(hit.collider.name+" "+hit.point);
+                //Debug.Log(hit.collider.name+" "+hit.point);
                 currentLeader.transform.position = hit.point;
             }
         }
@@ -130,10 +130,11 @@ public class PlayerManagerModule : ManagerModule
 
     public void GotHit()
     {
-        if (_time >= immuneTimeAfterHit)
-        {
-            _time = 0;
-            dudes[Random.Range(0, dudes.Count)].GoToRandomLocation();
-        }
+        if (_time < immuneTimeAfterHit) return;
+        _time = 0;
+        if (dudes.Count <= 0) return;
+
+        dudes[Random.Range(0, dudes.Count)].GoToRandomLocation();
+        //if (dudes.Count <= 0) DieScreen();
     }
 }
