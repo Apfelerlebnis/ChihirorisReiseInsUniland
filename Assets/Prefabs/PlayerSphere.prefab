@@ -43,7 +43,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.4339623, g: 1, b: 0.98311293, a: 1}
-  m_Intensity: 0.1
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -108,7 +108,6 @@ GameObject:
   - component: {fileID: 6707107686341064933}
   - component: {fileID: 5366530877353457137}
   - component: {fileID: 4821883615932216706}
-  - component: {fileID: 3678508751649493042}
   m_Layer: 8
   m_Name: PlayerSphere
   m_TagString: Player
@@ -206,7 +205,7 @@ MonoBehaviour:
   isMoving: 0
   _swarmSpread: 0.5
   partOfSwarm: 1
-  runawayTime: 0
+  time: 0
 --- !u!195 &6707107686341064933
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -257,21 +256,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bb76d4025aa29409f85dddd2b98321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!143 &3678508751649493042
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6963420206766777569}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 1
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
