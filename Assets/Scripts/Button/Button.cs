@@ -9,7 +9,7 @@ public class Button : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player") && !_gotPressed)
+        if ((other.gameObject.layer == LayerMask.NameToLayer("Player") && !_gotPressed) || (other.gameObject.layer == LayerMask.NameToLayer("MoveableObject") && !_gotPressed))
         {
             _gotPressed = true;
             door.OpenDoor();
