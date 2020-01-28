@@ -3,7 +3,11 @@ guid: 03155fd50d0d15f46b0a962c2f604c82
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - currentLeader: {instanceID: 0}
+  - _cameraEmpty: {instanceID: 0}
+  - _deathScreen: {fileID: 5259708248645850347, guid: 7d6c760b362154545b92e408363e62f5,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

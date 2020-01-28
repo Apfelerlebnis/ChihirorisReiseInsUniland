@@ -13,7 +13,6 @@ public class Button : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-
         if (ObjectNeeded == true && (other.gameObject.layer == LayerMask.NameToLayer("MoveableObject") && !_gotPressed) || 
             GeisterNeed <= playerManagerModule.GetComponent<PlayerManagerModule>().dudes.Count && (other.gameObject.layer == LayerMask.NameToLayer("Player") && !_gotPressed && GeisterNeeded == true))
         {

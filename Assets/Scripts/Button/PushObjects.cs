@@ -29,6 +29,7 @@ public class PushObjects : MonoBehaviour
             this.GetComponent<Rigidbody>().drag = 0.5f * Drag;
             this.GetComponent<Rigidbody>().angularDrag = 5 * AngularDrag;
         }
+
     }
 
 
