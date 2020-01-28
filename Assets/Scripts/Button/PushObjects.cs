@@ -6,23 +6,29 @@ public class PushObjects : MonoBehaviour
     //put on object that needs to be pushed
     //also add a rigid body component and freeze position (y) and freeze rotation (x and z)
 {
+
     public int pushPower = 100;
+    public int GeisterNeeded;
+    public PlayerManagerModule Player;
+    public float Drag;
+    public float AngularDrag;
 
 
-     private void OnControllerColliderHit(ControllerColliderHit hit)
+    private void Update()
     {
-        Rigidbody body = hit.collider.attachedRigidbody;
+        if (GeisterNeeded == Player.GetComponent<PlayerManagerModule>().dudes.Count)
+        {
+            this.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionZ & ~RigidbodyConstraints.FreezeRotationY & ~RigidbodyConstraints.FreezePositionX;
+            this.GetComponent<Rigidbody>().drag = 20 * Drag;
+            this.GetComponent<Rigidbody>().angularDrag = 200 * AngularDrag;
+        }
 
-        if (body == null || body.isKinematic) 
-            return; 
-        
-        if (hit.moveDirection.y <= -0.3)  
-            return;
-        
-        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-
-        body.velocity = pushDir * pushPower;
-
+        if (GeisterNeeded < Player.GetComponent<PlayerManagerModule>().dudes.Count)
+        {
+            this.GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionZ & ~RigidbodyConstraints.FreezeRotationY & ~RigidbodyConstraints.FreezePositionX;
+            this.GetComponent<Rigidbody>().drag = 0.5f * Drag;
+            this.GetComponent<Rigidbody>().angularDrag = 5 * AngularDrag;
+        }
     }
 
 
