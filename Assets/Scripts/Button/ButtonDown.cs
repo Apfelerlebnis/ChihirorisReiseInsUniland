@@ -23,20 +23,15 @@ public class ButtonDown : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        /*if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        
+        if (other.gameObject.layer == LayerMask.NameToLayer("MoveableObject"))
         {
-         //   Physics.IgnoreCollision(, this.GetComponent<Collider>()); 
-
-        }
-        else
-        {
-            if ((other.gameObject.layer == LayerMask.NameToLayer("MoveableObject")) && _gotPressed)
-                Debug.Log("peter");
+            //Debug.Log("oof");
             _gotPressed = false;
             door.CloseDoor();
-            transform.position += new Vector3(0, 0, 0);
+            transform.position += new Vector3(0, 0.1f, 0);
+
         }
-        */
 
     }
 
