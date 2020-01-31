@@ -18,6 +18,9 @@ public class PlayerEntity : Character
     private Vector3 _randomOffset;
     private int _followCounter;
 
+    private Transform _transMoving;
+    private Vector3 _posMoving;
+
     public enum EntityState
     {
         Waiting,
@@ -32,11 +35,17 @@ public class PlayerEntity : Character
     {
         base.Start();
         //runawayTime = -1000;
+
+        _transMoving = transform.Find("Moving");
+        _posMoving = _transMoving.position;
     }
 
     protected override void Update()
     {
         base.Update();
+
+        _posMoving = Vector3.Lerp(_posMoving, transform.position, 0.15f);
+        _transMoving.position = _posMoving;
 
         //if (entityState == EntityState.Follow)
         //_nav.destination = GetRandomPositionAroundLeader();
@@ -59,16 +68,19 @@ public class PlayerEntity : Character
 
     void HandleFollow()
     {
-        if (CurrentFollowDuration() >= 0.3 || _nav.isStopped )
+        if (CurrentFollowDuration() >= 0.3 || IsNavFinished())
         {
             DoFollow();
+            return;
         }
+        //Debug.Log("Rem:" + _nav.remainingDistance);
     }
 
     void DoFollow()
     {
+        //Debug.Log("DoFollow:" + _followCounter+"->"+ CurrentFollowDuration()+" -> "+ _nav.remainingDistance);
         _nav.destination = GetRandomPositionAroundLeader();
-        _followTimer = Random.value*0.125f;
+        _followTimer = Time.time + Random.value*0.125f;
         _followCounter++;
         if (_followCounter >= 10) _followCounter = 0;
     }
@@ -89,6 +101,7 @@ public class PlayerEntity : Character
         switch (state)
         {
             case EntityState.Waiting:
+                _followOffset = transform.position - _player.currentLeader.position;
                 break;
             case EntityState.Follow:
                 DoFollow();
@@ -105,8 +118,9 @@ public class PlayerEntity : Character
     Vector3 GetRandomPositionAroundLeader()
     {
         if (_player.dudes.Count <= 1) return _player.currentLeader.position;
-        
-        if(_followCounter==0) _randomOffset = new Vector3(Random.Range(-swarmSpread, swarmSpread),0,Random.Range(-swarmSpread, swarmSpread));
+
+        float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count);
+        if (_followCounter==0 && CurrentStateDuration() > 0.5f) _randomOffset = new Vector3(Random.Range(-swarmSpread, swarmSpread),0,Random.Range(-swarmSpread, swarmSpread));
         _followOffset = Vector3.Lerp(_followOffset, _randomOffset, 0.1f);
 
         //_followOffset

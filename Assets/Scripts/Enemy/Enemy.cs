@@ -154,7 +154,7 @@ public class Enemy : Character
                     _nav.destination = _startPos;
                     return true;
                 }
-                if (_nav.isStopped) { ChangeState(State.Standing); return true; }
+                if (IsNavFinished()) { ChangeState(State.Standing); return true; }
                 return true;
         }
         return false;

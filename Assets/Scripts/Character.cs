@@ -22,4 +22,6 @@ public class Character : MonoBehaviour
     protected virtual void Update()
     {
     }
+
+    protected bool IsNavFinished() { return _nav.remainingDistance <= (_nav.stoppingDistance+0.00f); }
 }
