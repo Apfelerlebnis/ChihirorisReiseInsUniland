@@ -3,30 +3,74 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class PlayerEntity : MonoBehaviour
-{
-    public bool isMoving = false;
-    private PlayerManagerModule _playerManagerModule;
-    [SerializeField] private float _swarmSpread = 1;
-    public bool partOfSwarm = false;
-    public float runawayTime = 0;
 
-    void Start()
+
+[RequireComponent(typeof(NavMeshAgent))]
+public class PlayerEntity : Character
+{
+    //private bool isMoving = false;
+    [SerializeField] protected float swarmSpread = 1;
+    [Tooltip("Time after taking damage in which the Player can't pick up this unit")]
+    [SerializeField] protected float pickUpCooldown = 2;
+    //private float _pickUpCooldown;
+    private float _followTimer = 0f;
+    private Vector3 _followOffset;
+    private Vector3 _randomOffset;
+    private int _followCounter;
+
+    public enum EntityState
     {
-        _playerManagerModule = GameManager.Instance.Get<PlayerManagerModule>();
-        runawayTime = -1000;
+        Waiting,
+        Follow,
+        Runaway,
+        GoToGuardian
     }
 
-    void Update()
+    EntityState entityState = EntityState.Waiting;
+
+    protected override void Start()
     {
-        if (isMoving && partOfSwarm)
+        base.Start();
+        //runawayTime = -1000;
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        //if (entityState == EntityState.Follow)
+        //_nav.destination = GetRandomPositionAroundLeader();
+
+        switch (entityState)
         {
-            GetComponent<NavMeshAgent>().destination = new Vector3(
-                _playerManagerModule.currentLeader.position.x + Random.Range(-_swarmSpread, _swarmSpread),
-                _playerManagerModule.currentLeader.position.y,
-                _playerManagerModule.currentLeader.position.z + Random.Range(-_swarmSpread, _swarmSpread));
+            case EntityState.Waiting:
+                break;
+            case EntityState.Follow:
+                HandleFollow();
+                break;
+            case EntityState.Runaway:
+                HandleCooldown();
+                break;
+            case EntityState.GoToGuardian:
+                break;
         }
+
+    }
+
+    void HandleFollow()
+    {
+        if (CurrentFollowDuration() >= 0.3 || _nav.isStopped )
+        {
+            DoFollow();
+        }
+    }
+
+    void DoFollow()
+    {
+        _nav.destination = GetRandomPositionAroundLeader();
+        _followTimer = Random.value*0.125f;
+        _followCounter++;
+        if (_followCounter >= 10) _followCounter = 0;
     }
 
     //void OnTriggerEnter(Collider other)
@@ -36,30 +80,65 @@ public class PlayerEntity : MonoBehaviour
     //}
 
 
-    public void Runaway()
+    public void ChangeState(EntityState state, Guardian guard = null)
     {
-        runawayTime = Time.time;
-        partOfSwarm = false;
-        isMoving = true;
-        _playerManagerModule.dudes.Remove(this);
+        if (entityState == state) return;
+        _stateStartTime = Time.time;
 
-        List<Vector3> possiblePos=new List<Vector3>();
+        Debug.Log($"state: {state}");
+        switch (state)
+        {
+            case EntityState.Waiting:
+                break;
+            case EntityState.Follow:
+                DoFollow();
+                break;
+            case EntityState.Runaway:
+                Runaway();
+                break;
+            case EntityState.GoToGuardian:
+                break;
+        }
+        entityState = state;
+    }
+
+    Vector3 GetRandomPositionAroundLeader()
+    {
+        if (_player.dudes.Count <= 1) return _player.currentLeader.position;
+        
+        if(_followCounter==0) _randomOffset = new Vector3(Random.Range(-swarmSpread, swarmSpread),0,Random.Range(-swarmSpread, swarmSpread));
+        _followOffset = Vector3.Lerp(_followOffset, _randomOffset, 0.1f);
+
+        //_followOffset
+        return _player.currentLeader.position+_followOffset;
+    }
+
+
+    private void Runaway()
+    {
+        //runawayTime = Time.time;
+        //partOfSwarm = false;
+        //isMoving = true;
+        _player.dudes.Remove(this);
+
+        List<Vector3> possiblePos = new List<Vector3>();
 
         const float MaxRange = 10;
         const float MinRange = 3;
 
-        for (float s=0;s<1;s+=(1.0f/16))
+        for (float s = 0; s < 1; s += (1.0f / 16))
         {
-            Vector3 newPos=transform.position + new Vector3(MaxRange*Mathf.Sin(s * Mathf.PI*2),0, MaxRange*Mathf.Cos(s * Mathf.PI * 2));
+            Vector3 newPos = transform.position + new Vector3(MaxRange * Mathf.Sin(s * Mathf.PI * 2), 0, MaxRange * Mathf.Cos(s * Mathf.PI * 2));
 
             RaycastHit hit;
-            if (Physics.Raycast(new Ray(transform.position, newPos- transform.position), out hit, MaxRange, PlayerManagerModule.LevelLayerMask))
+            if (Physics.Raycast(new Ray(transform.position, newPos - transform.position), out hit, MaxRange, PlayerManagerModule.LevelLayerMask))
             {
                 if (hit.distance > MinRange)
                 {
                     possiblePos.Add(hit.point);
                     //Debug.Log("" + s + " hit:" + hit.distance);
-                } else
+                }
+                else
                 {
                     //Debug.Log("" + s + " fail:" + hit.distance);
                 }
@@ -71,12 +150,31 @@ public class PlayerEntity : MonoBehaviour
             }
 
         }
-        if(possiblePos.Count<=0)
+        if (possiblePos.Count <= 0)
         {
             Debug.LogError("No possible pos found");
         }
 
 
-        GetComponent<NavMeshAgent>().destination = possiblePos[Random.Range(0, possiblePos.Count)];
+        _nav.destination = possiblePos[Random.Range(0, possiblePos.Count)];
     }
+
+    float CurrentStateDuration() { return Time.time - _stateStartTime; }
+    float CurrentFollowDuration() { return Time.time - _followTimer; }
+
+    void HandleCooldown()
+    {
+        if (CurrentStateDuration() >= pickUpCooldown)
+        {
+            //Timer zuende
+            ChangeState(EntityState.Waiting);
+        }
+    }
+
+    public bool IsAvailable()
+    {
+        return entityState == EntityState.Waiting;
+        //return !isOnCooldown && entityState != EntityState.Follow && entityState != EntityState.GoToGuardian;
+    }
+
 }

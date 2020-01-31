@@ -14,10 +14,10 @@ public class PlayerManagerModule : ManagerModule
     public float speed = 8;
     public Transform currentLeader;
     //private Vector3 _move;
-    [SerializeField] private Transform _cameraEmpty;
+    [SerializeField] protected Transform cameraFocus;
     private float _time = 0;
     [SerializeField] private float immuneTimeAfterHit = 2;
-    [SerializeField] private Canvas _deathScreen;
+    [SerializeField] protected Canvas _deathScreen;
     private bool _dead = false;
 
     public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10)); //8=player, 9=enemy, 10=Trigger
@@ -28,13 +28,18 @@ public class PlayerManagerModule : ManagerModule
         {
             MovePlayer();
         }
-        if (dudes.Count>0) {
-            Vector3 camPos = GetCenterPosition();
-            float newDistance = (_cameraEmpty.position - camPos).magnitude;
-            _cameraEmpty.position = Vector3.Lerp(_cameraEmpty.position, camPos, 0.1f);
+        HandleCamera();
+        CheckIfDead();
+    }
+
+    void HandleCamera()
+    {
+        if (dudes.Count > 0)
+        {
+            Vector3 dudesCenterPos = GetDudesCenterPosition();
+            cameraFocus.position = Vector3.Lerp(cameraFocus.position, dudesCenterPos, 0.1f);
             //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
         }
-        CheckIfDead();
     }
 
     private void CheckIfDead()
@@ -52,27 +57,27 @@ public class PlayerManagerModule : ManagerModule
     {
         if (dudes.Count <= 0) return;
 
-        Vector3 _move = Vector3.zero;
+        Vector3 playerInputVector = Vector3.zero;
         _time += Time.deltaTime;
 
         if (Input.GetKey("a"))
         {
-            _move.x = -1;
+            playerInputVector.x = -1;
         }
 
         if (Input.GetKey("d"))
         {
-            _move.x = +1;
+            playerInputVector.x = +1;
         }
 
         if (Input.GetKey("w"))
         {
-            _move.z = 1;
+            playerInputVector.z = 1;
         }
 
         if (Input.GetKey("s"))
         {
-            _move.z = -1;
+            playerInputVector.z = -1;
         }
 
         /*if (_move.x > 0 && _move.z > 0)
@@ -81,26 +86,27 @@ public class PlayerManagerModule : ManagerModule
             _move.z = Mathf.Sqrt(_move.z);
         }*/
 
-        if (Math.Abs(_move.magnitude) <= 0.1)
+        if (playerInputVector == Vector3.zero)
         {
             //currentLeader.position = GetCenterPosition();
-            currentLeader.position = _cameraEmpty.position;
+            currentLeader.position = cameraFocus.position;
             foreach (PlayerEntity dude in dudes)
             {
-                dude.isMoving = false;
+                dude.ChangeState(PlayerEntity.EntityState.Waiting);
             }
         }
         else
         {
             foreach (PlayerEntity dude in dudes)
             {
-                dude.isMoving = true;
+                dude.ChangeState(PlayerEntity.EntityState.Follow);
+                
             }
-            Vector3 moveDir= _move.normalized * 1;
-            currentLeader.transform.position = GetCenterPosition() + moveDir;
-            RaycastHit hit;
+            
+            Vector3 moveDir = playerInputVector.normalized;
+            currentLeader.transform.position = GetDudesCenterPosition() + moveDir;
 
-            if (Physics.Raycast(new Ray(_cameraEmpty.position, moveDir), out hit, moveDir.magnitude, LevelLayerMask))
+            if (Physics.Raycast(new Ray(cameraFocus.position, moveDir), out RaycastHit hit, moveDir.magnitude, LevelLayerMask))
             {
                 //Debug.Log(hit.collider.name+" "+hit.point);
                 currentLeader.transform.position = hit.point;
@@ -122,7 +128,7 @@ public class PlayerManagerModule : ManagerModule
         // _move = Vector3.zero;
     }
 
-    public Vector3 GetCenterPosition()
+    public Vector3 GetDudesCenterPosition()
     {
         Vector3 result = dudes.Aggregate(Vector3.zero, (current, playerEntity) => current + playerEntity.transform.position);
         return result / dudes.Count;
@@ -136,8 +142,33 @@ public class PlayerManagerModule : ManagerModule
         for (int i = 0; i < damage; i++)
         {
             if (dudes.Count <= 0) return;
-            dudes[Random.Range(0, dudes.Count)].Runaway();
+            dudes[Random.Range(0, dudes.Count)].ChangeState(PlayerEntity.EntityState.Runaway);
             //if (dudes.Count <= 0) DieScreen();
         }
     }
+
+
+    public PlayerEntity GetClosestPlayer(Vector3 position)
+    {
+        PlayerEntity toReturn = null;
+        float currentDistance = 0f;
+        PlayerEntity leader = currentLeader.GetComponent<PlayerEntity>();
+        foreach (PlayerEntity entity in dudes)
+        {
+            if (dudes.Count > 1 && entity == leader) continue;
+            //Finde die entity mit der geringsten Distanz zu position
+            float distanceToThisEntity = Vector3.Distance(entity.transform.position, position);
+            if (currentDistance == 0 || currentDistance > distanceToThisEntity)
+            {
+                currentDistance = distanceToThisEntity;
+                toReturn = entity;
+            }
+
+            //Entity:           1       2       3
+            //distance:         0.5     0.3     0.9 
+            //currentD:         0.5     0.3     
+        }
+        return toReturn;
+    }
+
 }

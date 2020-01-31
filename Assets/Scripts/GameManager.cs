@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    [SerializeField] private List<ManagerModule> _modules;
+    [SerializeField] protected List<ManagerModule> _modules;
 
     public void Register(ManagerModule module)
     {
