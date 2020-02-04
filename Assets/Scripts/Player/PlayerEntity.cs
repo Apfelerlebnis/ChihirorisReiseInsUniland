@@ -119,7 +119,7 @@ public class PlayerEntity : Character
     {
         if (_player.dudes.Count <= 1) return _player.currentLeader.position;
 
-        float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count);
+        //float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count - 2);
         if (_followCounter==0 && CurrentStateDuration() > 0.5f) _randomOffset = new Vector3(Random.Range(-swarmSpread, swarmSpread),0,Random.Range(-swarmSpread, swarmSpread));
         _followOffset = Vector3.Lerp(_followOffset, _randomOffset, 0.1f);
 
