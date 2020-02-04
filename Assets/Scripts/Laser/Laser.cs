@@ -38,12 +38,10 @@ public class Laser : MonoBehaviour
         {
             GetComponent<LineRenderer>().positionCount = 3;
             Vector3 pos = Vector3.Reflect(hit.point, hit.normal);
-            
-            if(hit.collider.CompareTag("Environment"))
-            {
-                GetComponent<LineRenderer>().SetPosition(2, pos);
+            GetComponent<LineRenderer>().SetPosition(2, pos);
+            if (hit.collider.CompareTag("Environment"))
+                GetComponent<LineRenderer>().SetPosition(2, hit.collider.transform.position);
 
-            }
 
         }
     }
