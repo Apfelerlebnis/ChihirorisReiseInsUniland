@@ -2321,6 +2321,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 636368390}
+    - target: {fileID: 953913031207085805, guid: 00d5b50628bb7544d9cc271a62f9cd5e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     - target: {fileID: 953913032315919790, guid: 00d5b50628bb7544d9cc271a62f9cd5e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2381,6 +2386,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Envoirment
       objectReference: {fileID: 0}
+    - target: {fileID: 953913032315919791, guid: 00d5b50628bb7544d9cc271a62f9cd5e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
+      objectReference: {fileID: 0}
     - target: {fileID: 953913033052632983, guid: 00d5b50628bb7544d9cc271a62f9cd5e,
         type: 3}
       propertyPath: door
@@ -2420,6 +2430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087445801238315820, guid: 00d5b50628bb7544d9cc271a62f9cd5e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Environment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00d5b50628bb7544d9cc271a62f9cd5e, type: 3}
