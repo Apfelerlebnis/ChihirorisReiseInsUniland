@@ -185,6 +185,7 @@ LineRenderer:
   m_Positions:
   - {x: 6, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -252,3 +253,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0770960178f6a4bae79317ace73678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xAchse: 0
+  zAchse: 0

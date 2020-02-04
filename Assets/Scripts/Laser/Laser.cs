@@ -12,7 +12,7 @@ public class Laser : MonoBehaviour
     private void Update()
     {
         GetComponent<LineRenderer>().SetPosition(0, transform.position);
-        Physics.Raycast(transform.position, new Vector3(transform.position.x + xAchse, transform.position.y, transform.position.z + zAchse), out hit , 1000, ~layerMask);
+        Physics.Raycast(transform.position, new Vector3(transform.position.x + xAchse, transform.position.y, transform.position.z + zAchse), out hit, 1000, ~layerMask);
 
 
         if (hit.collider)
@@ -24,7 +24,23 @@ public class Laser : MonoBehaviour
         {
             GetComponent<LineRenderer>().SetPosition(1, new Vector3(transform.position.x * 10, transform.position.y, transform.position.z));
         }
+
+        Mirror();
+
     }
 
+    void Mirror()
+    {
+        if (hit.collider.CompareTag("Mirror") != true)
+            GetComponent<LineRenderer>().positionCount = 2;
 
+        if (hit.collider.CompareTag("Mirror"))
+        {
+            GetComponent<LineRenderer>().positionCount = 3;
+            Vector3 pos = Vector3.Reflect(hit.point, hit.normal);
+            GetComponent<LineRenderer>().SetPosition(2, pos);
+
+
+        }
+    }
 }

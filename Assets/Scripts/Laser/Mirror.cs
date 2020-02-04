@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Mirror : MonoBehaviour
@@ -8,6 +7,7 @@ public class Mirror : MonoBehaviour
     public PlayerManagerModule Player;
     public bool xAchseMoveable;
     public bool zAchseMoveable;
+
 
     private void Update()
     {
@@ -24,6 +24,12 @@ public class Mirror : MonoBehaviour
             GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionZ & ~RigidbodyConstraints.FreezeRotationZ;
 
         }
+
+
+
+
     }
+
+
 }
 
