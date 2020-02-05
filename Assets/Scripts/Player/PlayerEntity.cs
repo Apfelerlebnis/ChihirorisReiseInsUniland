@@ -97,7 +97,7 @@ public class PlayerEntity : Character
         if (entityState == state) return;
         _stateStartTime = Time.time;
 
-        Debug.Log($"state: {state}");
+        //Debug.Log($"state: {state}");
         switch (state)
         {
             case EntityState.Waiting:
@@ -110,6 +110,10 @@ public class PlayerEntity : Character
                 Runaway();
                 break;
             case EntityState.GoToGuardian:
+                _player.dudes.Remove(this);
+                // = gameObject.GetComponent<Collider>().enabled
+                GetComponent<Collider>().enabled = false;
+
                 break;
         }
         entityState = state;
@@ -190,5 +194,12 @@ public class PlayerEntity : Character
         return entityState == EntityState.Waiting;
         //return !isOnCooldown && entityState != EntityState.Follow && entityState != EntityState.GoToGuardian;
     }
+
+    public void GoToGuardian(Guardian guardian)
+    {
+        _nav.destination = guardian.transform.position;
+        ChangeState(EntityState.GoToGuardian);
+    }
+
 
 }

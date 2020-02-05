@@ -20,7 +20,7 @@ public class Guardian : MonoBehaviour
     public float gettingRange = 3;
     public float gettingDudeTime = 0;
     public float sacraficeRange = 0.5f;
-    private int dudeCount = 0;
+    private bool dudeCount = false;
 
     void Start()
     {
@@ -42,13 +42,17 @@ public class Guardian : MonoBehaviour
         switch (guardianState)
         {
             case GuardianState.HasNoDude:
-                if (CheckRange(gettingRange)) ChangeState(GuardianState.GetDude);
+                if (CheckRange(gettingRange)) 
+                    ChangeState(GuardianState.GetDude);
                 break;
             case GuardianState.GetDude:
-
+                
+                GettingDude();
+                ChangeState(GuardianState.HasDude);
                 break;
             case GuardianState.HasDude:
                 //if (!CheckRange(gettingRange + 0.5f)) ChangeState(GuardianState.HasNoDude);
+
                 break;
             default:
                 ChangeState(GuardianState.HasNoDude);
@@ -67,14 +71,16 @@ public class Guardian : MonoBehaviour
     bool CheckRange(float range) => CheckRange(range, transform.position);
     bool CheckRange(float range, Vector3 position)
     {
-        foreach (var dude in _player.dudes)
-        {
-            if (Vector3.Distance(dude.transform.position, position) < range)
+        //if ()
+        //{
+            foreach (var dude in _player.dudes)
             {
-                return true;
+                if (Vector3.Distance(dude.transform.position, position) < range)
+                {
+                    return true;
+                }
             }
-        }
-
+        //}
         return false;
     }
 
@@ -82,8 +88,14 @@ public class Guardian : MonoBehaviour
     {
 
         PlayerEntity playerDude = _player.GetClosestPlayer(transform.position);
-        
+        playerDude.GoToGuardian(this);
+
+
 
     }
 
+   //void HasDude()
+   // {
+         
+   // }
 }
