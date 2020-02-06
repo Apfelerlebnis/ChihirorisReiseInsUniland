@@ -9,21 +9,17 @@ public class Laser : MonoBehaviour
     public float zAchse;
     RaycastHit hit;
     int layerMask = 1 << 8;
+    public Collider collider1;
+    public Collider collider2;
+    
+
+    private void Start()
+    {
+        List<Collider> colliders = new List<Collider>();
+        GetComponent<LineRenderer>().SetPosition(0, transform.position);
+    }
     private void Update()
     {
-        GetComponent<LineRenderer>().SetPosition(0, transform.position);
-        Physics.Raycast(transform.position, new Vector3(transform.position.x + xAchse, transform.position.y, transform.position.z + zAchse), out hit, 1000, ~layerMask);
-
-
-        if (hit.collider)
-        {
-            GetComponent<LineRenderer>().SetPosition(1, hit.point);
-
-        }
-        else
-        {
-            GetComponent<LineRenderer>().SetPosition(1, new Vector3(transform.position.x * 10, transform.position.y, transform.position.z));
-        }
 
         Mirror();
 
@@ -31,18 +27,30 @@ public class Laser : MonoBehaviour
 
     void Mirror()
     {
-        if (hit.collider.CompareTag("Mirror") != true)
-            GetComponent<LineRenderer>().positionCount = 2;
+        
+        Physics.Raycast(transform.position, new Vector3(transform.position.x + xAchse, transform.position.y, transform.position.z + zAchse), out hit, 500, ~layerMask);
 
-        if (hit.collider.CompareTag("Mirror"))
+        if (hit.collider)
         {
-            GetComponent<LineRenderer>().positionCount = 3;
-            Vector3 pos = Vector3.Reflect(hit.point, hit.normal);
-            GetComponent<LineRenderer>().SetPosition(2, pos);
-            if (hit.collider)
-                GetComponent<LineRenderer>().SetPosition(2, hit.point);
+            GetComponent<LineRenderer>().SetPosition(1, hit.point);
 
 
+            if (collider2 == hit.collider)
+            {
+                GetComponent<LineRenderer>().positionCount = 3;
+                Vector3 pos = Vector3.Reflect(hit.point, hit.normal);
+                GetComponent<LineRenderer>().SetPosition(2, pos);
+
+            }
+            else
+            {
+                GetComponent<LineRenderer>().positionCount = 2;
+
+            }
         }
+
+        
+
+        
     }
 }
