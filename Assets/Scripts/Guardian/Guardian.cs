@@ -66,6 +66,7 @@ public class Guardian : MonoBehaviour
         if (newState == guardianState) return;
         _stateStartTime = Time.time;
         guardianState = newState;
+        Debug.Log("Penis");
     }
 
     bool CheckRange(float range) => CheckRange(range, transform.position);

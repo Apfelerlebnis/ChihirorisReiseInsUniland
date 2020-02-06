@@ -2152,7 +2152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guardianState: 0
-  gettingRange: 3
+  gettingRange: 2
   gettingDudeTime: 0
   sacraficeRange: 2
 --- !u!1 &2028821458
