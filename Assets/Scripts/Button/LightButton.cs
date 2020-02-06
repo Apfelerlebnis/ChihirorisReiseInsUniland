@@ -6,15 +6,17 @@ public class LightButton : MonoBehaviour
 {
     bool gotPressed = false;
     public Door door;
+    public Collider collider;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Mirror")&& !gotPressed)
+       /* if (other is Ray && !gotPressed)
         {
+            Debug.Log("hit");
             gotPressed = true;
             door.OpenDoor();
 
-        }
+        }*/
 
     }
 
