@@ -17,6 +17,8 @@ public class PlayerEntity : Character
     private Vector3 _followOffset;
     private Vector3 _randomOffset;
     private int _followCounter;
+    public int abilityCooldownInSeconds;
+    public PlayerManagerModule playerManagerModule;
 
     private Transform _transMoving;
     private Vector3 _posMoving;
@@ -26,7 +28,8 @@ public class PlayerEntity : Character
         Waiting,
         Follow,
         Runaway,
-        GoToGuardian
+        GoToGuardian,
+        Sneaking
     }
 
     EntityState entityState = EntityState.Waiting;
@@ -61,6 +64,9 @@ public class PlayerEntity : Character
                 HandleCooldown();
                 break;
             case EntityState.GoToGuardian:
+                break;
+            case EntityState.Sneaking:
+                Sneaking();
                 break;
         }
 
@@ -114,6 +120,9 @@ public class PlayerEntity : Character
                 // = gameObject.GetComponent<Collider>().enabled
                 GetComponent<Collider>().enabled = false;
 
+                break;
+            case EntityState.Sneaking:
+                Sneaking();
                 break;
         }
         entityState = state;
@@ -201,5 +210,22 @@ public class PlayerEntity : Character
         ChangeState(EntityState.GoToGuardian);
     }
 
+    public void Sneaking()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            +
+            this.GetComponent<Light>().intensity = 0.1f;
+            playerManagerModule.speed /= 2;
+            
+                
+
+
+
+        }
+        
+
+
+    }
 
 }
