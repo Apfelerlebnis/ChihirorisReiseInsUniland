@@ -10,6 +10,7 @@ public class Button : MonoBehaviour
     public bool GeisterNeeded;
     public bool ObjectNeeded;
     public PlayerManagerModule playerManagerModule;
+    public Light light;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,8 +20,8 @@ public class Button : MonoBehaviour
 
             _gotPressed = true;
             door.OpenDoor();
-            transform.position += new Vector3(0, -0.1f, 0);
-
+            transform.position += new Vector3(0, 0, 0);
+            light.intensity = 1;
 
         }
         else
