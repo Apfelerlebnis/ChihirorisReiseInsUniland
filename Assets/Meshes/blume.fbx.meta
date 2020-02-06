@@ -3,7 +3,18 @@ guid: 69d620d8df874074a9a3770a31ba7cb8
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Defautl
+    second: {fileID: 670224309865224971, guid: 239183d168521eb42b90268aa2d0d403, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PLUME
+    second: {fileID: 8132028018639904888, guid: 69d620d8df874074a9a3770a31ba7cb8,
+      type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
