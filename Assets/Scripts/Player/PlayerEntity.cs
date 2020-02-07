@@ -214,7 +214,7 @@ public class PlayerEntity : Character
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            +
+            
             this.GetComponent<Light>().intensity = 0.1f;
             playerManagerModule.speed /= 2;
             
