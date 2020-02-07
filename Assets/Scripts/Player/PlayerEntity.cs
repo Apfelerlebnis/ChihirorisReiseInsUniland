@@ -216,7 +216,7 @@ public class PlayerEntity : Character
         {
             
             this.GetComponent<Light>().intensity = 0.1f;
-            playerManagerModule.speed /= 2;
+            _nav.speed = 10;
             
                 
 

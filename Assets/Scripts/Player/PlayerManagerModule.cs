@@ -11,7 +11,6 @@ using Random = UnityEngine.Random;
 public class PlayerManagerModule : ManagerModule
 {
     public List<PlayerEntity> dudes = new List<PlayerEntity>();
-    public float speed = 8;
     public Transform currentLeader;
     //private Vector3 _move;
     [SerializeField] protected Transform cameraFocus;
