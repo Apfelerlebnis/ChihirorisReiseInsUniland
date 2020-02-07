@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2684799405273433099}
   - component: {fileID: 2684799405273433103}
   - component: {fileID: 2684799405273433088}
+  - component: {fileID: 164189913}
   m_Layer: 0
   m_Name: Mirror
   m_TagString: Mirror
@@ -110,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.13, z: 1.58}
-  m_Center: {x: 0, y: 0, z: 0.79}
+  m_Size: {x: 1.5, y: 0.121179536, z: 0.7270942}
+  m_Center: {x: 0, y: 0.047748975, z: 0.36354694}
 --- !u!114 &2684799405273433088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +128,20 @@ MonoBehaviour:
   GeisterNeeded: 1
   Player: {fileID: 0}
   xAchseMoveable: 0
-  zAchseMoveable: 1
+  zAchseMoveable: 0
+--- !u!65 &164189913
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225029958109720885}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42901802, y: 0.07627693, z: 0.68264467}
+  m_Center: {x: -0.008921623, y: -0.030618213, z: 0.83356977}
 --- !u!1001 &5093239615540956108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,24 +204,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 8c90439b9b6df534fb7a3b8d460a4974,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 8c90439b9b6df534fb7a3b8d460a4974,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 8c90439b9b6df534fb7a3b8d460a4974,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 8c90439b9b6df534fb7a3b8d460a4974,
         type: 3}
       propertyPath: m_Name
+      value: Mirror
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8c90439b9b6df534fb7a3b8d460a4974,
+        type: 3}
+      propertyPath: m_TagString
       value: Mirror
       objectReference: {fileID: 0}
     m_RemovedComponents: []

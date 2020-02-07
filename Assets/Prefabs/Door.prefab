@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 20
   SpeedZ: 0
+  stopSpeed: 10
 --- !u!114 &548063143305054977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,6 +29,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -5
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &1429397881814075235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,6 +44,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 6
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &563475965250292268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 5
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &3112033195549407407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +74,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -4
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &6713010952941210360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 9
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &5311120505734998015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 5
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &845694476626100345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -10
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &2193825641032264093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 20
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &8420011189964386445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 5
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &8191196084595931109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -8
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &8226494022191745005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -20
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &4932533798532849210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -7
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &6032664859077441421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 0
   SpeedZ: 20
+  stopSpeed: 0
 --- !u!114 &141314961022087454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 10
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!1 &5740353705552403120
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +388,7 @@ MonoBehaviour:
   doorRight: {fileID: 5740353705552403120}
   doorLeftOpen: {fileID: 5740353706249485971}
   doorRightOpen: {fileID: 5740353706573158205}
+  _isOpen: 0
 --- !u!1 &5740353706249485968
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,6 +574,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 7
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &537799717521126880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -10
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &6321373197750489210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,6 +604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: 5
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &5441552706033135619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -600,6 +619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -10
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!114 &8369346934340331447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedY: -5
   SpeedZ: 0
+  stopSpeed: 0
 --- !u!1001 &2460750421025737987
 PrefabInstance:
   m_ObjectHideFlags: 0

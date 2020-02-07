@@ -11,7 +11,7 @@ public class Door : MonoBehaviour
     public Transform doorLeftOpen;
     public Transform doorRightOpen;
 
-    private bool _isOpen = false;
+    public bool _isOpen = false;
 
     private Vector3 _doorLeftPos;
     private Vector3 _doorRightPos;
