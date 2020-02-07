@@ -9,7 +9,7 @@ public class Laser : MonoBehaviour
     public float xAchse;
     public float zAchse;
     RaycastHit hit;
-    int layerMask = 1 << 8;
+    readonly int layerMask = 1 << 8;
     public Collider collider1;
     public Collider collider2;
     public Collider lightGoal;
@@ -32,7 +32,7 @@ public class Laser : MonoBehaviour
     void Mirror()
     {
         
-        Physics.Raycast(transform.position, new Vector3(transform.position.x + xAchse, transform.position.y, transform.position.z + zAchse), out hit, 500, ~layerMask);
+        Physics.Raycast(transform.position, new Vector3(transform.forward.x + xAchse, transform.position.y, transform.forward.z + zAchse), out hit, 500, ~layerMask);
 
         if (hit.collider)
         {
@@ -44,8 +44,7 @@ public class Laser : MonoBehaviour
             {
                 GetComponent<LineRenderer>().positionCount = 3;
                 Vector3 pos = Vector3.Reflect(hit.point, hit.normal);
-                RaycastHit hit2;
-                Physics.Raycast(hit.point, hit.normal, out hit2, Mathf.Infinity, ~layerMask);
+                Physics.Raycast(hit.point, hit.normal, out RaycastHit hit2, Mathf.Infinity, ~layerMask);
                 if (lightGoal == hit2.collider)
                 {
                     door.OpenDoor();

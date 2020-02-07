@@ -75,8 +75,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.43529415, g: 0.79581076, b: 1, a: 1}
-  m_Intensity: 0.2
-  m_Range: 5
+  m_Intensity: 0.15
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -188,6 +188,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   swarmSpread: 1.2
   pickUpCooldown: 2
+  abilityCooldownInSeconds: 0
+  playerManagerModule: {fileID: 0}
 --- !u!195 &6707107686341064933
 NavMeshAgent:
   m_ObjectHideFlags: 0
