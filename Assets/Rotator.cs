@@ -11,7 +11,8 @@ public class Rotator : MonoBehaviour
 
     private void Update()
     {
-        
+        transform.Rotate(new Vector3(0, 1, 0), SpeedY * Time.deltaTime);
+        transform.Rotate(new Vector3(0, 0, 1), SpeedZ * Time.deltaTime);
 
         DoorOpen();
     }
