@@ -19,7 +19,7 @@ public class Rotator : MonoBehaviour
 
     void DoorOpen()
     {
-        if (CompareTag("Trigger")) 
+      /*  if (CompareTag("Trigger")) 
         {
             if (GetComponent<Door>()._isOpen == true)
             {
@@ -34,7 +34,7 @@ public class Rotator : MonoBehaviour
             }
 
 
-        }
+        }*/
         
 
     }

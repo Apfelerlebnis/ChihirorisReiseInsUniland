@@ -29,7 +29,7 @@ public class PlayerEntity : Character
         Follow,
         Runaway,
         GoToGuardian,
-        Sneaking
+        //Sneaking
     }
 
     EntityState entityState = EntityState.Waiting;
@@ -46,7 +46,7 @@ public class PlayerEntity : Character
     protected override void Update()
     {
         base.Update();
-
+        Debug.Log("Blääääääääähhhhh");
         _posMoving = Vector3.Lerp(_posMoving, transform.position, 0.15f);
         _transMoving.position = _posMoving;
 
@@ -65,9 +65,9 @@ public class PlayerEntity : Character
                 break;
             case EntityState.GoToGuardian:
                 break;
-            case EntityState.Sneaking:
+            /*case EntityState.Sneaking:
                 Sneaking();
-                break;
+                break;*/
         }
 
     }
@@ -98,7 +98,7 @@ public class PlayerEntity : Character
     //}
 
 
-    public void ChangeState(EntityState state, Guardian guard = null)
+    public void ChangeState(EntityState state)
     {
         if (entityState == state) return;
         _stateStartTime = Time.time;
@@ -121,9 +121,9 @@ public class PlayerEntity : Character
                 GetComponent<Collider>().enabled = false;
 
                 break;
-            case EntityState.Sneaking:
+          /*  case EntityState.Sneaking:
                 Sneaking();
-                break;
+                break;*/
         }
         entityState = state;
     }
@@ -132,8 +132,8 @@ public class PlayerEntity : Character
     {
         if (_player.dudes.Count <= 1) return _player.currentLeader.position;
 
-        //float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count - 2);
-        if (_followCounter==0 && CurrentStateDuration() > 0.5f) _randomOffset = new Vector3(Random.Range(-swarmSpread, swarmSpread),0,Random.Range(-swarmSpread, swarmSpread));
+        float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count - 1);
+        if (_followCounter==0 && CurrentStateDuration() > 0.5f) _randomOffset = new Vector3(Random.Range(-spread, spread),0,Random.Range(-spread, spread));
         _followOffset = Vector3.Lerp(_followOffset, _randomOffset, 0.1f);
 
         //_followOffset
