@@ -16,8 +16,15 @@ public class Door : MonoBehaviour
     private Vector3 _doorLeftPos;
     private Vector3 _doorRightPos;
 
+    public GameObject doorFull;
+    public GameObject circleR;
+    public GameObject circleL;
+    public GameObject[] circles = new GameObject[20];
+    Quaternion[] rotation = new Quaternion[20];
+
     public void Start()
     {
+        
         _doorLeftPos = doorLeft.transform.position;
         _doorRightPos = doorRight.transform.position;
     }
@@ -28,6 +35,18 @@ public class Door : MonoBehaviour
         //DOTween.Clear();
         if (_isOpen) return;
         _isOpen = true;
+        GetComponentInChildren<Rotator>().SpeedY = 60;
+        for (int i = 0; i < circles.Length; i++)
+        {
+            circles[i].transform.rotation = rotation[i];
+        }
+        for (int o = 0; o < rotation.Length; o++)
+        {
+            rotation[o].z = 0;
+        }
+        doorFull.SetActive(false);
+        circleR.SetActive(true);
+        circleL.SetActive(true);
         doorLeft.transform.DOMove(doorLeftOpen.position, 1);
         doorRight.transform.DOMove(doorRightOpen.position, 1);
     }
@@ -35,6 +54,9 @@ public class Door : MonoBehaviour
     [ContextMenu("Close Door")]
     public void CloseDoor()
     {
+        doorFull.SetActive(true);
+        circleR.SetActive(false);
+        circleL.SetActive(false);
         //DOTween.Clear();
         if (!_isOpen) return;
         _isOpen = false;

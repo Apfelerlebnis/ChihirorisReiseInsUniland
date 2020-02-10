@@ -31,7 +31,6 @@ public class Laser : MonoBehaviour
 
     void Mirror()
     {
-        
         Physics.Raycast(transform.position, transform.forward, out hit, 500, PlayerManagerModule.LevelLayerMask);
 
         if (hit.collider)
@@ -60,9 +59,9 @@ public class Laser : MonoBehaviour
 
             }
         }
-
         
 
-        
+
+
     }
 }

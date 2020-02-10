@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Half_Flower_small_left
+  m_Name: Half_flower_ends_left
   m_Shader: {fileID: -6465566751694194690, guid: 0746a50b4383fd6478e9292a385914c4,
     type: 3}
   m_ShaderKeywords: 

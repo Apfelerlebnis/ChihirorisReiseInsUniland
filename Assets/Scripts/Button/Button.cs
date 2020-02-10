@@ -21,7 +21,7 @@ public class Button : MonoBehaviour
             _gotPressed = true;
             door.OpenDoor();
             transform.position += new Vector3(0, 0, 0);
-            light.intensity = 1;
+            
 
         }
         else
