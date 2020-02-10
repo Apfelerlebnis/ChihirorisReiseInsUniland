@@ -41,11 +41,6 @@ public class PlayerManagerModule : ManagerModule
             cameraFocus.position = Vector3.Lerp(cameraFocus.position, dudesCenterPos, 0.1f);
             //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
         }
-        foreach(PlayerEntity dude in dudes)
-        {
-            camera.transform.localPosition = camera.transform.localPosition + new Vector3(0, 0, 1);
-
-        }
 
     }
 
