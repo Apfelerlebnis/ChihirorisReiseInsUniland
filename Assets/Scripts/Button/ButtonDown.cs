@@ -5,6 +5,7 @@ public class ButtonDown : MonoBehaviour
     public Door door;
     private bool _gotPressed;
     public PlayerManagerModule Player;
+    public Light light;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class ButtonDown : MonoBehaviour
         {
             _gotPressed = true;
             door.OpenDoor();
+            light.intensity = 1;
         }
 
     }
@@ -28,7 +30,7 @@ public class ButtonDown : MonoBehaviour
             //Debug.Log("oof");
             _gotPressed = false;
             door.CloseDoor();
-
+            light.intensity = 0;
         }
 
     }
