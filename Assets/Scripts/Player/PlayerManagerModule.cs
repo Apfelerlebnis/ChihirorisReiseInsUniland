@@ -18,6 +18,8 @@ public class PlayerManagerModule : ManagerModule
     [SerializeField] private float immuneTimeAfterHit = 2;
     [SerializeField] protected Canvas _deathScreen;
     private bool _dead = false;
+    public Camera camera;
+    
 
     public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10)); //8=player, 9=enemy, 10=Trigger
 
@@ -39,6 +41,12 @@ public class PlayerManagerModule : ManagerModule
             cameraFocus.position = Vector3.Lerp(cameraFocus.position, dudesCenterPos, 0.1f);
             //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
         }
+        foreach(PlayerEntity dude in dudes)
+        {
+            camera.transform.localPosition = camera.transform.localPosition + new Vector3(0, 0, 1);
+
+        }
+
     }
 
     private void CheckIfDead()

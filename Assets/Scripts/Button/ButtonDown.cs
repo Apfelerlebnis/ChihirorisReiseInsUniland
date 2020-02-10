@@ -16,7 +16,6 @@ public class ButtonDown : MonoBehaviour
         {
             _gotPressed = true;
             door.OpenDoor();
-            transform.position += new Vector3(0, -0.1f, 0);
         }
 
     }
@@ -29,7 +28,6 @@ public class ButtonDown : MonoBehaviour
             //Debug.Log("oof");
             _gotPressed = false;
             door.CloseDoor();
-            transform.position += new Vector3(0, 0.1f, 0);
 
         }
 
