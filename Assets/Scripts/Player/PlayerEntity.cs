@@ -22,6 +22,7 @@ public class PlayerEntity : Character
 
     private Transform _transMoving;
     private Vector3 _posMoving;
+    private bool sneakingOn = false;
 
     public enum EntityState
     {
@@ -29,7 +30,7 @@ public class PlayerEntity : Character
         Follow,
         Runaway,
         GoToGuardian,
-        //Sneaking
+        Sneaking
     }
 
     EntityState entityState = EntityState.Waiting;
@@ -46,7 +47,7 @@ public class PlayerEntity : Character
     protected override void Update()
     {
         base.Update();
-        Debug.Log("Blääääääääähhhhh");
+       // Debug.Log("Blääääääääähhhhh");
         _posMoving = Vector3.Lerp(_posMoving, transform.position, 0.15f);
         _transMoving.position = _posMoving;
 
@@ -56,18 +57,32 @@ public class PlayerEntity : Character
         switch (entityState)
         {
             case EntityState.Waiting:
+                GetComponentInChildren<Light>().intensity = 0.1f;
                 break;
             case EntityState.Follow:
+                if(sneakingOn == false)
+                {
+                    GetComponentInChildren<Light>().intensity = 0.1f;
+                    _nav.speed = 2;
+
+                }
+                
                 HandleFollow();
                 break;
             case EntityState.Runaway:
+                if (sneakingOn == false)
+                {
+                    GetComponentInChildren<Light>().intensity = 0.1f;
+                    _nav.speed = 2;
+
+                }
                 HandleCooldown();
                 break;
             case EntityState.GoToGuardian:
                 break;
-            /*case EntityState.Sneaking:
+            case EntityState.Sneaking:
                 Sneaking();
-                break;*/
+                break;
         }
 
     }
@@ -121,9 +136,9 @@ public class PlayerEntity : Character
                 GetComponent<Collider>().enabled = false;
 
                 break;
-          /*  case EntityState.Sneaking:
+            case EntityState.Sneaking:
                 Sneaking();
-                break;*/
+                break;
         }
         entityState = state;
     }
@@ -212,17 +227,15 @@ public class PlayerEntity : Character
 
     public void Sneaking()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0))
         {
-            
-            this.GetComponent<Light>().intensity = 0.1f;
-            _nav.speed = 10;
-            
-                
-
-
-
+            Debug.Log("owo");
+            sneakingOn = true;
+            GetComponentInChildren<Light>().intensity = 0.1f;
+            _nav.speed = 1.5f;
         }
+        else
+            sneakingOn = false;
         
 
 
