@@ -1391,6 +1391,11 @@ PrefabInstance:
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
       value: 0.1964283
       objectReference: {fileID: 0}
+    - target: {fileID: -3069393548186264140, guid: 000d6b5cff096f247b85dd225980aaf6,
+        type: 3}
+      propertyPath: m_UseWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1622179352883155200, guid: 000d6b5cff096f247b85dd225980aaf6,
         type: 3}
       propertyPath: m_Name
@@ -1484,17 +1489,22 @@ PrefabInstance:
     - target: {fileID: 3916141171221419061, guid: 000d6b5cff096f247b85dd225980aaf6,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.7071068
+      value: 0.57735026
       objectReference: {fileID: 0}
     - target: {fileID: 3916141171221419061, guid: 000d6b5cff096f247b85dd225980aaf6,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.57735026
       objectReference: {fileID: 0}
     - target: {fileID: 3916141171221419061, guid: 000d6b5cff096f247b85dd225980aaf6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3916141171221419061, guid: 000d6b5cff096f247b85dd225980aaf6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.57735026
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 000d6b5cff096f247b85dd225980aaf6, type: 3}
