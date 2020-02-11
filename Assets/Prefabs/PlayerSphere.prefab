@@ -189,7 +189,8 @@ MonoBehaviour:
   swarmSpread: 0.5
   pickUpCooldown: 2
   abilityCooldownInSeconds: 0
-  playerManagerModule: {fileID: 0}
+  playerManagerModule: {fileID: 2884412330047094106, guid: 1da65c6730dd0b043ae30f9365a21687,
+    type: 3}
 --- !u!195 &6707107686341064933
 NavMeshAgent:
   m_ObjectHideFlags: 0

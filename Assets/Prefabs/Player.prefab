@@ -152,11 +152,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dudes:
   - {fileID: 0}
-  speed: 3
   currentLeader: {fileID: 2884412329274046936}
-  _cameraEmpty: {fileID: 2884412328635714832}
+  cameraFocus: {fileID: 0}
   immuneTimeAfterHit: 2
   _deathScreen: {fileID: 0}
+  camera: {fileID: 0}
 --- !u!1 &7050974574349626618
 GameObject:
   m_ObjectHideFlags: 0

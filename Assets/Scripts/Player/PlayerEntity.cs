@@ -47,7 +47,7 @@ public class PlayerEntity : Character
     protected override void Update()
     {
         base.Update();
-       // Debug.Log("Blääääääääähhhhh");
+       
         _posMoving = Vector3.Lerp(_posMoving, transform.position, 0.15f);
         _transMoving.position = _posMoving;
 
