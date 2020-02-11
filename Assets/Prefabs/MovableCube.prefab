@@ -204,7 +204,7 @@ MonoBehaviour:
   pushPower: 1
   GeisterNeeded: 0
   Player: {fileID: 0}
-  Drag: 100
+  Drag: 50
   AngularDrag: 100
 --- !u!54 &9184354603105219607
 Rigidbody:
