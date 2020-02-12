@@ -14,7 +14,6 @@ public class Laser : MonoBehaviour
     public Door door;
     private Ray ray;
     private Ray ray2;
-
     private void Start()
     {
         GetComponent<LineRenderer>().SetPosition(0, new Vector3(0, 0, 0));
@@ -40,18 +39,21 @@ public class Laser : MonoBehaviour
 
                 if (collider2 == hit.collider)
                 {
+                    //Vector3 reflectPos = Vector3.Reflect(ray.direction, hitPoint.normalized);
                     GetComponent<LineRenderer>().positionCount = 3;
-                    if (!Physics.Raycast(hit.point + hit.normal * 0.2f, hit.normal, out RaycastHit hit2, Mathf.Infinity, PlayerManagerModule.LevelLayerMask))
-                    {
-                        
-                    }
+                    Physics.Raycast((hitPoint - hit.point), hitPoint.normalized, out RaycastHit hit2, Mathf.Infinity, PlayerManagerModule.LevelLayerMask);
+                    Debug.DrawRay((hitPoint - hit.point), hitPoint.normalized, Color.red);
+                    Debug.Log("Alex hat einen kleinen Penis  -Kadir");
+                    hit2.point = hitPoint + hit.normal * 10;
+                        if (lightGoal == hit2.collider)
+                        {
+                            door.OpenDoor();
+                        }
+                    
 
-                    if (lightGoal == hit2.collider)
-                    {
-                        door.OpenDoor();
-                    }
-
-                    GetComponent<LineRenderer>().SetPosition(2, hit2.point);
+                    
+                    Vector3 hitPoint2 = transform.InverseTransformPoint(hit2.point);
+                    GetComponent<LineRenderer>().SetPosition(2, hitPoint2);
                 }
                 else
                 {
