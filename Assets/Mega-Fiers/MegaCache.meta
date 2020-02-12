@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/Mega-Fiers/MegaCache.meta
 guid: c8f691a0df1a62545be818f395941842
+=======
+guid: 7043731714088be4890004747092e05f
+>>>>>>> origin/master:Assets/Mega-Fiers/MegaFier Test Scene.meta
+=======
+guid: c8f691a0df1a62545be818f395941842
+>>>>>>> origin/master
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
