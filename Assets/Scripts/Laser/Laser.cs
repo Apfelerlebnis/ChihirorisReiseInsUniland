@@ -13,6 +13,7 @@ public class Laser : MonoBehaviour
     public Collider lightGoal;
     public Door door;
     private Ray ray;
+    private Ray ray2;
 
     private void Start()
     {
@@ -32,19 +33,17 @@ public class Laser : MonoBehaviour
         void Mirror()
         {
             Physics.Raycast(ray.origin, ray.direction, out hit, 5000, PlayerManagerModule.LevelLayerMask);
-            Debug.DrawRay(ray.origin, ray.direction);
             if (hit.collider)
             {
-
-                GetComponent<LineRenderer>().SetPosition(1, new Vector3(hit.point.x, 0, hit.point.z));
-
+                Vector3 hitPoint = transform.InverseTransformPoint(hit.point);
+                GetComponent<LineRenderer>().SetPosition(1, hitPoint);
 
                 if (collider2 == hit.collider)
                 {
                     GetComponent<LineRenderer>().positionCount = 3;
                     if (!Physics.Raycast(hit.point + hit.normal * 0.2f, hit.normal, out RaycastHit hit2, Mathf.Infinity, PlayerManagerModule.LevelLayerMask))
                     {
-                        hit2.point = hit.point + hit.normal * 10;
+                        
                     }
 
                     if (lightGoal == hit2.collider)
@@ -60,11 +59,6 @@ public class Laser : MonoBehaviour
 
                 }
             }
-            else
-                Debug.Log("Didnt hit");
-
-
-
 
         }
     }
