@@ -5527,6 +5527,16 @@ PrefabInstance:
       propertyPath: playerManagerModule
       value: 
       objectReference: {fileID: 2119341797}
+    - target: {fileID: 8481263259654574390, guid: 962537e8cadbd5c4a9adb24009031c70,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8481263259654574390, guid: 962537e8cadbd5c4a9adb24009031c70,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962537e8cadbd5c4a9adb24009031c70, type: 3}
 --- !u!114 &486544797 stripped

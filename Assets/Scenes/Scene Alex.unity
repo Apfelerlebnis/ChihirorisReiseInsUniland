@@ -2785,7 +2785,7 @@ PrefabInstance:
     - target: {fileID: 6963420206766777574, guid: 962537e8cadbd5c4a9adb24009031c70,
         type: 3}
       propertyPath: swarmSpread
-      value: 8
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962537e8cadbd5c4a9adb24009031c70, type: 3}

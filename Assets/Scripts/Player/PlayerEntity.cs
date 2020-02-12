@@ -48,7 +48,7 @@ public class PlayerEntity : Character
     {
         base.Update();
        
-        _posMoving = Vector3.Lerp(_posMoving, transform.position, 0.15f);
+        _posMoving = Vector3.Lerp(_posMoving, transform.position, 0.3f);
         _transMoving.position = _posMoving;
 
         //if (entityState == EntityState.Follow)
