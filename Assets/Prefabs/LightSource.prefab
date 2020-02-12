@@ -194,7 +194,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.4464283
+        value: 0.08590889
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -206,8 +206,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.5562478, g: 0.9433962, b: 0.9357353, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.36258453, g: 0.9150943, b: 0.7787312, a: 1}
+      key1: {r: 0, g: 0.6438234, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -253,12 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0770960178f6a4bae79317ace73678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xAchse: 0
-  zAchse: 0
-  collider1: {fileID: 0}
-  collider2: {fileID: 0}
   lightGoal: {fileID: 0}
-  door: {fileID: 0}
 --- !u!1001 &8296291779825041199
 PrefabInstance:
   m_ObjectHideFlags: 0
