@@ -11,6 +11,7 @@ public class Button : MonoBehaviour
     public bool ObjectNeeded;
     public PlayerManagerModule playerManagerModule;
     public Light light;
+    public GameObject particles;
 
     void OnTriggerEnter(Collider other)
     {
@@ -20,9 +21,8 @@ public class Button : MonoBehaviour
 
             _gotPressed = true;
             door.OpenDoor();
-            transform.position += new Vector3(0, 0, 0);
-            
-
+            particles.gameObject.SetActive(true);
+            light.intensity = 0.5f;
         }
         else
             return;
