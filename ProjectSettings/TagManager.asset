@@ -8,6 +8,7 @@ TagManager:
   - Mirror
   - Environment
   - LightSource
+  - LightTrigger
   layers:
   - Default
   - TransparentFX

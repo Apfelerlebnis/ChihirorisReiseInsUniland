@@ -7,9 +7,8 @@ public class Mirror : MonoBehaviour
     public PlayerManagerModule Player;
     public bool xAchseMoveable;
     public bool zAchseMoveable;
-    public Door door;
-    public GameObject lightGoal;
     private Ray ray;
+    public Door door;
 
     private void Update()
     {
@@ -31,15 +30,17 @@ public class Mirror : MonoBehaviour
     public void CastHit()
     {
           ray = new Ray(transform.position, transform.forward);
-          Physics.Raycast(ray.origin, new Vector3(0,0,1), out RaycastHit hit, 5000, PlayerManagerModule.LevelLayerMask);
+          Physics.Raycast(ray.origin, transform.forward, out RaycastHit hit, 5000, PlayerManagerModule.LevelLayerMask);
           if (hit.collider)
           {
               Vector3 hitPoint2 = transform.InverseTransformPoint(hit.point);
               GetComponent<LineRenderer>().SetPosition(1, hitPoint2);
-              if (lightGoal == hit.collider)
-              {
-                  door.OpenDoor();
-              }
+            if (hit.collider.CompareTag("LightTrigger"))
+            {
+                door.OpenDoor();
+            }
+            else
+                return;
 
           }
 

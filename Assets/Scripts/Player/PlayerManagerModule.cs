@@ -18,10 +18,9 @@ public class PlayerManagerModule : ManagerModule
     [SerializeField] private float immuneTimeAfterHit = 2;
     [SerializeField] protected Canvas _deathScreen;
     private bool _dead = false;
-    public Camera camera;
     
 
-    public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10)); //8=player, 9=enemy, 10=Trigger
+    public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10) | (1 << 2)); //8=player, 9=enemy, 10=Trigger, 2=Ignore Raycast
 
     void Update()
     {

@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6997029150047913696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8501920581067470993}
+  - component: {fileID: 8113006213011864948}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: LightTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8501920581067470993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6997029150047913696}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_Children: []
+  m_Father: {fileID: 8102571348683348449}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8113006213011864948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6997029150047913696}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15555254, y: 0.7778774, z: 0.77851886}
+  m_Center: {x: 0.08596372, y: 0.011005, z: -0.018138092}
 --- !u!1 &8102571348683348452
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,12 +54,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8102571348683348449}
   - component: {fileID: 8102571348683348450}
-  - component: {fileID: 8102571348683348448}
-  - component: {fileID: 3273794297917681597}
   - component: {fileID: 321321686138327474}
+  - component: {fileID: 7069403929945100091}
   m_Layer: 10
   m_Name: DoorTriggerLight
-  m_TagString: Untagged
+  m_TagString: LightTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,6 +74,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
+  - {fileID: 8501920581067470993}
   - {fileID: 1488726151979960787}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -51,31 +95,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &8102571348683348448
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8102571348683348452}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.2873468, z: 1}
-  m_Center: {x: 0, y: 0.6829326, z: 0}
---- !u!114 &3273794297917681597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8102571348683348452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3959893638de0804281dd229cd1b0d55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &321321686138327474
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -89,6 +108,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.5864677, y: 0.9655621, z: 2.5051522}
   m_Center: {x: -0.049824953, y: 0.33049357, z: -0.010640621}
+--- !u!136 &7069403929945100091
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8102571348683348452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5607256
+  m_Height: 1.3930045
+  m_Direction: 1
+  m_Center: {x: -1.2583047e-15, y: 0.91145444, z: -0.06072563}
 --- !u!1001 &5896250137642017481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96,6 +129,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8102571348683348449}
     m_Modifications:
+    - target: {fileID: -7892293896055144750, guid: dc5f408f6140c194a9f328cf0d52e0c6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5259225927154676129, guid: dc5f408f6140c194a9f328cf0d52e0c6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dc5f408f6140c194a9f328cf0d52e0c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -134,7 +177,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: dc5f408f6140c194a9f328cf0d52e0c6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: dc5f408f6140c194a9f328cf0d52e0c6,
         type: 3}
@@ -155,6 +198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lichtstrahlnehmer
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: dc5f408f6140c194a9f328cf0d52e0c6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc5f408f6140c194a9f328cf0d52e0c6, type: 3}

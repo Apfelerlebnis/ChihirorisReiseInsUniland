@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 7323643064322276397}
   - component: {fileID: -3069393548186264140}
   - component: {fileID: 3781584309689593315}
-  m_Layer: 0
+  - component: {fileID: 898062307}
+  m_Layer: 2
   m_Name: LightSource
-  m_TagString: Untagged
+  m_TagString: LightSource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -184,8 +185,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 6, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  - {x: 5, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -193,8 +194,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.08590889
+        time: 0.005306244
+        value: 0.25000954
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -253,7 +254,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0770960178f6a4bae79317ace73678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightGoal: {fileID: 0}
+--- !u!54 &898062307
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622179352883155200}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &8296291779825041199
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,10 +6,8 @@ using UnityEngine;
 public class Laser : MonoBehaviour
 {
     RaycastHit hit;
-
-    //readonly int layerMask = 1 << 8;
-    public Collider lightGoal;
     private Ray ray;
+
     private void Start()
     {
         GetComponent<LineRenderer>().SetPosition(0, new Vector3(0, 0, 0));
