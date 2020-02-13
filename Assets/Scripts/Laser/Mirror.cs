@@ -12,13 +12,13 @@ public class Mirror : MonoBehaviour
 
     private void Update()
     {
-        if(GeisterNeeded == Player.GetComponent<PlayerManagerModule>().dudes.Count && xAchseMoveable == true)
+        if(GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && xAchseMoveable == true)
         {
 
             GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionX & ~RigidbodyConstraints.FreezeRotationZ;
         }
 
-        if (GeisterNeeded == Player.GetComponent<PlayerManagerModule>().dudes.Count && zAchseMoveable == true)
+        if (GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && zAchseMoveable == true)
         {
 
             GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionZ & ~RigidbodyConstraints.FreezeRotationZ;
