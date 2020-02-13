@@ -1297,17 +1297,17 @@ VisualEffectResource:
             serializedVersion: 2
             key0: {r: 1, g: 1, b: 1, a: 0}
             key1: {r: 0.11320752, g: 0.58812934, b: 1, a: 0.5019608}
-            key2: {r: 0.9735072, g: 0.59607846, b: 1, a: 0.5019608}
-            key3: {r: 1, g: 1, b: 1, a: 0}
-            key4: {r: 0, g: 0, b: 0, a: 0}
+            key2: {r: 0.3470686, g: 0.59079784, b: 1, a: 0.5019608}
+            key3: {r: 0.8098432, g: 0.59607846, b: 1, a: 0}
+            key4: {r: 1, g: 1, b: 1, a: 0}
             key5: {r: 0, g: 0, b: 0, a: 0}
             key6: {r: 0, g: 0, b: 0, a: 0}
             key7: {r: 0, g: 0, b: 0, a: 0}
             ctime0: 0
-            ctime1: 17873
-            ctime2: 44779
-            ctime3: 65535
-            ctime4: 0
+            ctime1: 22486
+            ctime2: 41512
+            ctime3: 53620
+            ctime4: 65535
             ctime5: 0
             ctime6: 0
             ctime7: 0
@@ -1320,7 +1320,7 @@ VisualEffectResource:
             atime6: 0
             atime7: 0
             m_Mode: 0
-            m_NumColorKeys: 4
+            m_NumColorKeys: 5
             m_NumAlphaKeys: 4
       m_NamedObject:
         m_Array:
@@ -2406,7 +2406,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.11320751905441284,"g":0.5881293416023254,"b":1.0,"a":1.0},"time":0.2727245092391968},{"color":{"r":0.9735072255134583,"g":0.5960784554481506,"b":1.0,"a":1.0},"time":0.6832837462425232},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.501960813999176,"time":0.10000763088464737},{"alpha":0.501960813999176,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":0.0},{"color":{"r":0.11320751905441284,"g":0.5881293416023254,"b":1.0,"a":1.0},"time":0.34311437606811526},{"color":{"r":0.3470686078071594,"g":0.5907978415489197,"b":1.0,"a":1.0},"time":0.6334325075149536},{"color":{"r":0.8098431825637817,"g":0.5960784554481506,"b":1.0,"a":1.0},"time":0.8181887269020081},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.501960813999176,"time":0.10000763088464737},{"alpha":0.501960813999176,"time":0.800000011920929},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
