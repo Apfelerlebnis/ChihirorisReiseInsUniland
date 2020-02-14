@@ -18,7 +18,6 @@ public class PlayerEntity : Character
     private Vector3 _randomOffset;
     private int _followCounter;
     public int abilityCooldownInSeconds;
-    public PlayerManagerModule playerManagerModule;
 
     private Transform _transMoving;
     private Vector3 _posMoving;
@@ -42,6 +41,12 @@ public class PlayerEntity : Character
 
         _transMoving = transform.Find("Moving");
         _posMoving = _transMoving.position;
+
+        if (IsLeader())
+        {
+            _nav.enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+        }
     }
 
     protected override void Update()
@@ -87,8 +92,14 @@ public class PlayerEntity : Character
 
     }
 
+    public bool IsLeader()
+    {
+        return _player.GetDudeLeader() == this;
+    }
+
     void HandleFollow()
     {
+        if (IsLeader()) return;
         if (CurrentFollowDuration() >= 0.3 || IsNavFinished())
         {
             DoFollow();
@@ -99,6 +110,7 @@ public class PlayerEntity : Character
 
     void DoFollow()
     {
+        if (IsLeader()) return;
         //Debug.Log("DoFollow:" + _followCounter+"->"+ CurrentFollowDuration()+" -> "+ _nav.remainingDistance);
         _nav.destination = GetRandomPositionAroundLeader();
         _followTimer = Time.time + Random.value*0.125f;
@@ -122,7 +134,7 @@ public class PlayerEntity : Character
         switch (state)
         {
             case EntityState.Waiting:
-                _followOffset = transform.position - _player.currentLeader.position;
+                _followOffset = transform.position - _player.GetLeaderPosistion();
                 break;
             case EntityState.Follow:
                 DoFollow();
@@ -145,14 +157,14 @@ public class PlayerEntity : Character
 
     Vector3 GetRandomPositionAroundLeader()
     {
-        if (_player.dudes.Count <= 1) return _player.currentLeader.position;
+        if (_player.dudes.Count <= 1) return _player.GetLeaderPosistion();
 
         float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count - 1);
         if (_followCounter==0 && CurrentStateDuration() > 0.5f) _randomOffset = new Vector3(Random.Range(-spread, spread),0,Random.Range(-spread, spread));
         _followOffset = Vector3.Lerp(_followOffset, _randomOffset, 0.1f);
 
         //_followOffset
-        return _player.currentLeader.position+_followOffset;
+        return _player.GetLeaderPosistion()+_followOffset;
     }
 
 
@@ -162,6 +174,7 @@ public class PlayerEntity : Character
         //partOfSwarm = false;
         //isMoving = true;
         _player.dudes.Remove(this);
+        _nav.enabled = true;
 
         List<Vector3> possiblePos = new List<Vector3>();
 

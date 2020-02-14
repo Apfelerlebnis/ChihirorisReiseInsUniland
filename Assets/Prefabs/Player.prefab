@@ -33,7 +33,7 @@ Transform:
   - {fileID: 7315817549739030467}
   - {fileID: 736585454798668210}
   m_Father: {fileID: 2884412330047094109}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2884412328635714837
 MonoBehaviour:
@@ -76,36 +76,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2884412329274046937
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2884412329274046936}
-  m_Layer: 8
-  m_Name: SwarmLeader
-  m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2884412329274046936
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2884412329274046937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.47, y: 0, z: -2.74}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2884412330047094109}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2884412330047094107
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +104,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2884412329274046936}
   - {fileID: 2884412328635714832}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -153,11 +122,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dudes:
   - {fileID: 0}
-  currentLeader: {fileID: 2884412329274046936}
   cameraFocus: {fileID: 0}
   immuneTimeAfterHit: 2
   _deathScreen: {fileID: 0}
-  camera: {fileID: 0}
 --- !u!1 &6026890744832820172
 GameObject:
   m_ObjectHideFlags: 0

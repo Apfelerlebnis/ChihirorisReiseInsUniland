@@ -221,7 +221,7 @@ public class Enemy : Character
         _followTimer = 0;
 
         //Debug.Log("Follow:" + _nav.destination + " -> " + _player.GetCenterPosition());
-        _nav.destination = _player.GetDudesCenterPosition();
+        _nav.destination = _player.GetLeaderPosistion();
     }
 
 

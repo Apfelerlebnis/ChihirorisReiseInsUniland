@@ -11,16 +11,28 @@ using Random = UnityEngine.Random;
 public class PlayerManagerModule : ManagerModule
 {
     public List<PlayerEntity> dudes = new List<PlayerEntity>();
-    public Transform currentLeader;
+    //public Transform currentLeader;
     //private Vector3 _move;
     [SerializeField] protected Transform cameraFocus;
     private float _time = 0;
     [SerializeField] private float immuneTimeAfterHit = 2;
     [SerializeField] protected Canvas _deathScreen;
     private bool _dead = false;
+    private float _currentMoveSpeed = 0;
+    private Vector3 _currentCamSpeed;
+    private Vector3 _lastMoveInput;
     
 
     public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10) | (1 << 2)); //8=player, 9=enemy, 10=Trigger, 2=Ignore Raycast
+
+    private void Start()
+    {
+        if(dudes.Count<=0)
+        {
+            Debug.LogError("Missing DudesLeader in PlayerManagerModule!");
+            return;
+        }
+    }
 
     void Update()
     {
@@ -28,17 +40,18 @@ public class PlayerManagerModule : ManagerModule
         {
             MovePlayer();
         }
-        HandleCamera();
+        //HandleCamera();
         CheckIfDead();
     }
 
-    void HandleCamera()
+    void LateUpdate()
     {
         if (dudes.Count > 0)
         {
-            Vector3 dudesCenterPos = GetDudesCenterPosition();
-            cameraFocus.position = Vector3.Lerp(cameraFocus.position, dudesCenterPos, 0.1f);
-            //_cameraEmpty.DOLocalMove(GetCenterPosition(), 0.1f);
+            Vector3 pos = GetLeaderPosistion();
+            pos += _currentCamSpeed * 0.75f;
+            cameraFocus.position = Vector3.Lerp(cameraFocus.position, pos, 0.1f);
+            //cameraFocus.position = pos;
         }
 
     }
@@ -52,6 +65,26 @@ public class PlayerManagerModule : ManagerModule
         }
         MovePlayer();
         
+    }
+
+    public PlayerEntity GetDudeLeader()
+    {
+        if(dudes.Count<=0)
+        {
+            Debug.LogError("No dudes, no leader!");
+            return null;
+        }
+        return dudes[0];
+    }
+
+    public Vector3 GetLeaderPosistion()
+    {
+        if (dudes.Count <= 0)
+        {
+            Debug.LogError("No dudes, no leader!");
+            return Vector3.zero;
+        }
+        return GetDudeLeader().transform.position;
     }
 
     private void MovePlayer()
@@ -90,31 +123,53 @@ public class PlayerManagerModule : ManagerModule
         if (playerInputVector == Vector3.zero)
         {
             //currentLeader.position = GetCenterPosition();
-            currentLeader.position = cameraFocus.position;
+            //currentLeader.position = cameraFocus.position;
             foreach (PlayerEntity dude in dudes)
             {
                 dude.ChangeState(PlayerEntity.EntityState.Waiting);
             }
+
+            _currentMoveSpeed -= Time.deltaTime/0.25f;
+            if (_currentMoveSpeed < 0) _currentMoveSpeed = 0;
+            _currentCamSpeed -= _currentCamSpeed.normalized * Time.deltaTime/ 1f;
+            if (_currentCamSpeed.magnitude <= 0.01f) _currentCamSpeed = Vector3.zero;
+
+            if (_currentMoveSpeed > 0) DoMove();
         }
         else
         {
+            _currentMoveSpeed += Time.deltaTime / 0.5f;
+            if (_currentMoveSpeed > 1) _currentMoveSpeed = 1;
+
+            _currentCamSpeed += playerInputVector * Time.deltaTime / 1;
+            if (_currentCamSpeed.magnitude > 1) _currentCamSpeed.Normalize();
+
+
             foreach (PlayerEntity dude in dudes)
             {
                 dude.ChangeState(PlayerEntity.EntityState.Follow);
-                
-            }
-            
-            Vector3 moveDir = playerInputVector.normalized;
-            currentLeader.transform.position = GetDudesCenterPosition() + moveDir;
 
-            if (Physics.Raycast(new Ray(cameraFocus.position, moveDir), out RaycastHit hit, moveDir.magnitude, LevelLayerMask))
+            }
+
+            Vector3 moveDir = playerInputVector.normalized;
+            _lastMoveInput = moveDir;
+            DoMove();
+            //currentLeader.transform.position = GetDudesCenterPosition() + moveDir;
+
+            /*if (Physics.Raycast(new Ray(cameraFocus.position, moveDir), out RaycastHit hit, moveDir.magnitude, LevelLayerMask))
             {
                 //Debug.Log(hit.collider.name+" "+hit.point);
-                currentLeader.transform.position = hit.point;
-            }
+                //currentLeader.transform.position = hit.point;
+            }*/
         }
 
-        
+        void DoMove()
+        {
+            var leader = GetDudeLeader();
+            //leader.GetComponent<Rigidbody>().MovePosition(leader.transform.position + (moveDir * leader._nav.speed*0.9f * Time.deltaTime));
+            leader.GetComponent<CharacterController>().Move(_lastMoveInput * leader._nav.speed * 0.6f * _currentMoveSpeed * Time.deltaTime);
+        }
+
 
         /*if (dudes.Count == 1)
         {
@@ -129,12 +184,6 @@ public class PlayerManagerModule : ManagerModule
         // _move = Vector3.zero;
     }
 
-    public Vector3 GetDudesCenterPosition()
-    {
-        Vector3 result = dudes.Aggregate(Vector3.zero, (current, playerEntity) => current + playerEntity.transform.position);
-        return result / dudes.Count;
-    }
-
     public void GotHit(int damage)
     {
         if (_time < immuneTimeAfterHit) return;
@@ -143,7 +192,9 @@ public class PlayerManagerModule : ManagerModule
         for (int i = 0; i < damage; i++)
         {
             if (dudes.Count <= 0) return;
-            dudes[Random.Range(0, dudes.Count)].ChangeState(PlayerEntity.EntityState.Runaway);
+            int idx = 0;
+            if (dudes.Count > 1) idx = Random.Range(1, dudes.Count);
+            dudes[idx].ChangeState(PlayerEntity.EntityState.Runaway);
             //if (dudes.Count <= 0) DieScreen();
         }
     }
@@ -153,7 +204,7 @@ public class PlayerManagerModule : ManagerModule
     {
         PlayerEntity toReturn = null;
         float currentDistance = 0f;
-        PlayerEntity leader = currentLeader.GetComponent<PlayerEntity>();
+        PlayerEntity leader = GetDudeLeader();
         foreach (PlayerEntity entity in dudes)
         {
             if (dudes.Count > 1 && entity == leader) continue;

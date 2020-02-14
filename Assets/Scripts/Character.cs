@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
 {
     protected PlayerManagerModule _player;
     protected Vector3 _startPos;
-    protected NavMeshAgent _nav;
+    public NavMeshAgent _nav;
     protected float _stateStartTime = 0f;
 
     // Start is called before the first frame update

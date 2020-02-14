@@ -9627,6 +9627,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5366530877353457137, guid: 962537e8cadbd5c4a9adb24009031c70,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6963420206766777569, guid: 962537e8cadbd5c4a9adb24009031c70,
         type: 3}
       propertyPath: m_Name
