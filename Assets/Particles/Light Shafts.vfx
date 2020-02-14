@@ -1124,8 +1124,8 @@ VisualEffectResource:
           m_Value:
             serializedVersion: 2
             key0: {r: 0.003921577, g: 0.18287373, b: 0.98039216, a: 0}
-            key1: {r: 0.11372548, g: 0.5884783, b: 1, a: 0.1254902}
-            key2: {r: 0.13841486, g: 0, b: 1, a: 0.1254902}
+            key1: {r: 0.11372548, g: 0.5884783, b: 1, a: 0.15686275}
+            key2: {r: 0.13841486, g: 0, b: 1, a: 0.15686275}
             key3: {r: 0, g: 0, b: 0, a: 0}
             key4: {r: 0, g: 0, b: 0, a: 0}
             key5: {r: 0, g: 0, b: 0, a: 0}
@@ -1140,7 +1140,7 @@ VisualEffectResource:
             ctime6: 0
             ctime7: 0
             atime0: 0
-            atime1: 6554
+            atime1: 4036
             atime2: 48815
             atime3: 65535
             atime4: 0
@@ -2230,7 +2230,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Gradient, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.003921576775610447,"g":0.18287372589111329,"b":0.9803921580314636,"a":1.0},"time":0.0},{"color":{"r":0.11372548341751099,"g":0.5884783267974854,"b":1.0,"a":1.0},"time":0.4721446633338928},{"color":{"r":0.13841485977172852,"g":0.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.125490203499794,"time":0.10000763088464737},{"alpha":0.125490203499794,"time":0.7448691725730896},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
+      m_SerializableObject: '{"colorKeys":[{"color":{"r":0.003921576775610447,"g":0.18287372589111329,"b":0.9803921580314636,"a":1.0},"time":0.0},{"color":{"r":0.11372548341751099,"g":0.5884783267974854,"b":1.0,"a":1.0},"time":0.4721446633338928},{"color":{"r":0.13841485977172852,"g":0.0,"b":1.0,"a":1.0},"time":1.0}],"alphaKeys":[{"alpha":0.0,"time":0.0},{"alpha":0.1568627506494522,"time":0.06158541142940521},{"alpha":0.1568627506494522,"time":0.7448691725730896},{"alpha":0.0,"time":1.0}],"gradientMode":0}'
     m_Space: 2147483647
   m_Property:
     name: Color
