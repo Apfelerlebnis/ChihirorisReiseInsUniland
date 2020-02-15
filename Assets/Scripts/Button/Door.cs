@@ -17,6 +17,7 @@ public class Door : MonoBehaviour
     private Vector3 _doorRightPos;
 
     public GameObject doorFull;
+    public GameObject activationParticles;
     public GameObject circleR;
     public GameObject circleL;
     public GameObject[] circles = new GameObject[20];
@@ -33,22 +34,12 @@ public class Door : MonoBehaviour
     public void OpenDoor()
     {
         //DOTween.Clear();
+        
         if (_isOpen) return;
         _isOpen = true;
         GetComponentInChildren<Rotator>().SpeedY = 60;
-        for (int i = 0; i < circles.Length; i++)
-        {
-            circles[i].transform.rotation = rotation[i];
-        }
-        for (int o = 0; o < rotation.Length; o++)
-        {
-            rotation[o].z = 0;
-        }
-        doorFull.SetActive(false);
-        circleR.SetActive(true);
-        circleL.SetActive(true);
-        doorLeft.transform.DOMove(doorLeftOpen.position, 1);
-        doorRight.transform.DOMove(doorRightOpen.position, 1);
+        StartCoroutine(Open());
+        
     }
 
     [ContextMenu("Close Door")]
@@ -62,5 +53,26 @@ public class Door : MonoBehaviour
         _isOpen = false;
         doorLeft.transform.DOMove(_doorLeftPos, 1);
         doorRight.transform.DOMove(_doorRightPos, 1);
+    }
+
+    IEnumerator Open()
+    {
+        yield return new WaitForSeconds(1);
+        activationParticles.SetActive(true);
+        yield return new WaitForSeconds(2);
+
+        for (int i = 0; i < circles.Length; i++)
+        {
+            circles[i].transform.rotation = rotation[i];
+        }
+        for (int o = 0; o < rotation.Length; o++)
+        {
+            rotation[o].z = 0;
+        }
+        doorFull.SetActive(false);
+        circleR.SetActive(true);
+        circleL.SetActive(true);
+        doorLeft.transform.DOMove(doorLeftOpen.position, 1);
+        doorRight.transform.DOMove(doorRightOpen.position, 1);
     }
 }
