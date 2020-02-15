@@ -18,6 +18,7 @@ public class Door : MonoBehaviour
 
     public GameObject doorFull;
     public GameObject activationParticles;
+    public GameObject activationParticlesGround;
     public GameObject circleR;
     public GameObject circleL;
     public GameObject[] circles = new GameObject[20];
@@ -59,6 +60,7 @@ public class Door : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         activationParticles.SetActive(true);
+        activationParticlesGround.SetActive(true);
         yield return new WaitForSeconds(2);
 
         for (int i = 0; i < circles.Length; i++)
