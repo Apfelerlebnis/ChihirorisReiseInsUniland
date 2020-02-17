@@ -19,6 +19,8 @@ public class PlayerManagerModule : ManagerModule
     [SerializeField] protected Canvas _deathScreen;
     private bool _dead = false;
     private float _currentMoveSpeed = 0;
+    public float leaderSpeed = 0.6f;
+    public float lookRotationSpeed = 10f;
     private Vector3 _currentCamSpeed;
     private Vector3 _lastMoveInput;
     
@@ -167,7 +169,18 @@ public class PlayerManagerModule : ManagerModule
         {
             var leader = GetDudeLeader();
             //leader.GetComponent<Rigidbody>().MovePosition(leader.transform.position + (moveDir * leader._nav.speed*0.9f * Time.deltaTime));
-            leader.GetComponent<CharacterController>().Move(_lastMoveInput * leader._nav.speed * 0.6f * _currentMoveSpeed * Time.deltaTime);
+            leader.GetComponent<CharacterController>().Move(_lastMoveInput * leader._nav.speed * leaderSpeed * _currentMoveSpeed * Time.deltaTime);
+
+            if(playerInputVector != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(playerInputVector);
+                leader.transform.rotation = Quaternion.Slerp(leader.transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
+            }
+
+
+            //if (playerInputVector != Vector3.zero)
+            //    leader.transform.rotation = Quaternion.LookRotation(playerInputVector * 10 * Time.deltaTime);
+            //leader.transform.DOLookAt(playerInputVector, 2f, AxisConstraint.Y, Vector3.up);
         }
 
 

@@ -11386,6 +11386,11 @@ PrefabInstance:
       propertyPath: playerManagerModule
       value: 
       objectReference: {fileID: 2119341797}
+    - target: {fileID: 7643346240659325169, guid: 962537e8cadbd5c4a9adb24009031c70,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8174324921751491372, guid: 962537e8cadbd5c4a9adb24009031c70,
         type: 3}
       propertyPath: m_Range
@@ -11981,6 +11986,11 @@ PrefabInstance:
       propertyPath: playerManagerModule
       value: 
       objectReference: {fileID: 2119341797}
+    - target: {fileID: 7643346240659325169, guid: 962537e8cadbd5c4a9adb24009031c70,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962537e8cadbd5c4a9adb24009031c70, type: 3}
 --- !u!1001 &524045149

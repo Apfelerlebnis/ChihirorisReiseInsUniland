@@ -2568,6 +2568,11 @@ PrefabInstance:
       propertyPath: cameraFocus
       value: 
       objectReference: {fileID: 1753284021}
+    - target: {fileID: 2884412330047094106, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: leaderSpeed
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 2884412330047094107, guid: 1da65c6730dd0b043ae30f9365a21687,
         type: 3}
       propertyPath: m_Name
