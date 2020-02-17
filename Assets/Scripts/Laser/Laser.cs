@@ -35,6 +35,11 @@ public class Laser : MonoBehaviour
                     Mirror mirror = hit.collider.GetComponent<Mirror>();
                     mirror.CastHit();
                 }
+                else if (hit.collider.gameObject.CompareTag("LightTrigger") == true)
+                {
+                    hit.collider.GetComponent<ButtonLight>().OpenDoor();
+
+                }
                 else
                     return;
             }
