@@ -2048,6 +2048,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1007069767}
     m_Modifications:
+    - target: {fileID: -3069393548186264140, guid: 000d6b5cff096f247b85dd225980aaf6,
+        type: 3}
+      propertyPath: m_Parameters.generateLightingData
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062838011999348188, guid: 000d6b5cff096f247b85dd225980aaf6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1622179352883155200, guid: 000d6b5cff096f247b85dd225980aaf6,
         type: 3}
       propertyPath: m_Name
@@ -2633,6 +2643,16 @@ PrefabInstance:
         type: 3}
       propertyPath: xAchseMoveable
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349599554939660745, guid: ceb6c24df756a7441aab59cbd19109a9,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1221533393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349599554939660745, guid: ceb6c24df756a7441aab59cbd19109a9,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8349599554939660751, guid: ceb6c24df756a7441aab59cbd19109a9,
         type: 3}
