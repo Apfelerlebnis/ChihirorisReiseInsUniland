@@ -70,8 +70,8 @@ public class PlayerEntity : Character
                     GetComponentInChildren<Light>().intensity = 0.1f;
                     _nav.speed = 2;
 
-                }
-                
+                } else _nav.speed = 1;
+
                 HandleFollow();
                 break;
             case EntityState.Runaway:
