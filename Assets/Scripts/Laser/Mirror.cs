@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Mirror : MonoBehaviour
@@ -8,8 +9,8 @@ public class Mirror : MonoBehaviour
     public bool xAchseMoveable;
     public bool zAchseMoveable;
     private Ray ray;
-    public Door door;
-
+    GameObject trigger;
+    bool doorOpen = false;
     private void Update()
     {
         if(GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && xAchseMoveable == true)
@@ -33,14 +34,22 @@ public class Mirror : MonoBehaviour
           Physics.Raycast(ray.origin, transform.forward, out RaycastHit hit, 5000, PlayerManagerModule.LevelLayerMask);
           if (hit.collider)
           {
-              Vector3 hitPoint2 = transform.InverseTransformPoint(hit.point);
-              GetComponent<LineRenderer>().SetPosition(1, hitPoint2);
-            if (hit.collider.CompareTag("LightTrigger"))
+            Vector3 hitPoint2 = transform.InverseTransformPoint(hit.point);
+            GetComponent<LineRenderer>().SetPosition(1, hitPoint2);
+            if (hit.collider.gameObject.CompareTag("LightTrigger") == true && doorOpen == false)
             {
-                door.OpenDoor();
+
+                hit.collider.gameObject.GetComponent<ButtonLight>().OpenDoor();
+                trigger = hit.collider.gameObject;
+                doorOpen = true;
             }
-            else
-                return;
+            if (hit.collider.gameObject.CompareTag("LightTrigger") != true && doorOpen == true)
+            {
+                trigger.GetComponent<ButtonLight>().CloseDoor();
+                doorOpen = false;
+
+            }
+                
 
           }
 
