@@ -729,7 +729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aacc8a453c724459018112918cd02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 864569904}
 --- !u!1001 &58188609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8932,18 +8931,6 @@ Transform:
   m_Father: {fileID: 478426440}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &864569904 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5740353705584188450, guid: a8c661cce0693244485c55d6d22dd281,
-    type: 3}
-  m_PrefabInstance: {fileID: 932861221}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb81a69be21d61e4ea0d6b198a42b184, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &866291263
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13225,7 +13212,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4aacc8a453c724459018112918cd02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1372336992}
 --- !u!1 &1260140805
 GameObject:
   m_ObjectHideFlags: 0
