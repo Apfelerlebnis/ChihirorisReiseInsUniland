@@ -1,12 +1,19 @@
 fileFormatVersion: 2
-guid: 1242f76e7b863eb47a4d3fc124ae6ecd
+guid: 67d66eb2e5079064693d2335cf7957cd
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
+  internalIDToNameTable: []
+  externalObjects:
   - first:
-      74: 1827226128182048838
-    second: Take 001
-  externalObjects: {}
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Augen
+    second: {fileID: 2100000, guid: 60d64b46a63272643856c01128b68752, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Koerper
+    second: {fileID: 2100000, guid: 93fcd87cf1dbc544e83ffd669079f1bb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -70,7 +77,14 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
+  referencedClips:
+  - b03df717588a5fd4d8c70646b665dc8c
+  - 0697008d4af1638408c4092e9f964755
+  - e2a1b97404707a14892fc25172b58d67
+  - 9c18c2a4ac0f8a44a86e43f511b6b5dc
+  - f54baa1400d3cc8438034b7174bf1ee7
+  - a81c76141b635c84d858143278b2ce62
+  - dde4af96104504b4191bc23cad11f8d3
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -88,12 +102,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 93fa9a8db02ee8f42a955b9c0abe7c67,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 2
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
