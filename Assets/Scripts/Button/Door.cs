@@ -46,14 +46,14 @@ public class Door : MonoBehaviour
     [ContextMenu("Close Door")]
     public void CloseDoor()
     {
-        doorFull.SetActive(true);
-        circleR.SetActive(false);
-        circleL.SetActive(false);
-        //DOTween.Clear();
+
         if (!_isOpen) return;
         _isOpen = false;
         doorLeft.transform.DOMove(_doorLeftPos, 1);
         doorRight.transform.DOMove(_doorRightPos, 1);
+        activationParticles.SetActive(false);
+        activationParticlesGround.SetActive(false);
+        StartCoroutine(Close());
     }
 
     IEnumerator Open()
@@ -63,18 +63,20 @@ public class Door : MonoBehaviour
         activationParticlesGround.SetActive(true);
         yield return new WaitForSeconds(2);
 
-        for (int i = 0; i < circles.Length; i++)
-        {
-            circles[i].transform.rotation = rotation[i];
-        }
-        for (int o = 0; o < rotation.Length; o++)
-        {
-            rotation[o].z = 0;
-        }
         doorFull.SetActive(false);
         circleR.SetActive(true);
         circleL.SetActive(true);
         doorLeft.transform.DOMove(doorLeftOpen.position, 3);
         doorRight.transform.DOMove(doorRightOpen.position, 3);
+    }
+    IEnumerator Close()
+    {
+        yield return new WaitForSeconds(1);
+        activationParticles.SetActive(false);
+        activationParticlesGround.SetActive(false);
+
+        doorFull.SetActive(true);
+        circleR.SetActive(false);
+        circleL.SetActive(false);
     }
 }
