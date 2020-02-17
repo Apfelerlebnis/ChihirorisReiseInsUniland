@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8501920581067470993}
   - component: {fileID: 8113006213011864948}
-  - component: {fileID: 402465897}
+  - component: {fileID: 2657981283247733507}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: LightTrigger
@@ -45,7 +45,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15555254, y: 0.7778774, z: 0.77851886}
   m_Center: {x: 0.08596372, y: 0.011005, z: -0.018138092}
---- !u!114 &402465897
+--- !u!114 &2657981283247733507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
