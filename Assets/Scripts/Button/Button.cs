@@ -48,7 +48,7 @@ public class Button : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(LerpTimer);
+        //Debug.Log(LerpTimer);
         if (GeisterFillImage.fillAmount != fFillamount)
         {
             LerpTimer += Time.deltaTime * LerpRate;
