@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Enemy_Lava
+  m_Shader: {fileID: -6465566751694194690, guid: 4566cc460188e4a4d8cbe3337f4218c0,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_2A0747D9:
+        m_Texture: {fileID: 2800000, guid: d86aeb74aec825741b8bbc96692015a3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_975F528A:
+        m_Texture: {fileID: 2800000, guid: 6d816b651699e3642b993b3deb1257e9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_78F55B7E: 2
+    - Vector1_EE9D05F9: 1
+    m_Colors:
+    - Color_267C7AAA: {r: 1, g: 1, b: 1, a: 0}
+    - Color_984D64E0: {r: 1, g: 0, b: 0.4296031, a: 0}
+    - Vector2_2123D5DD: {r: 1.5, g: 0, b: 0, a: 0}
+    - Vector2_6DEA5B58: {r: 0.04, g: 0, b: 0, a: 0}
+    - Vector2_87646F52: {r: 0.02, g: 0, b: 0, a: 0}
+    - Vector2_BF8DAE2E: {r: 1, g: 1, b: 0, a: 0}

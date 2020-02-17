@@ -52,8 +52,8 @@ public class Door : MonoBehaviour
         //DOTween.Clear();
         if (!_isOpen) return;
         _isOpen = false;
-        doorLeft.transform.DOMove(_doorLeftPos, 20);
-        doorRight.transform.DOMove(_doorRightPos, 20);
+        doorLeft.transform.DOMove(_doorLeftPos, 1);
+        doorRight.transform.DOMove(_doorRightPos, 1);
     }
 
     IEnumerator Open()
@@ -74,7 +74,7 @@ public class Door : MonoBehaviour
         doorFull.SetActive(false);
         circleR.SetActive(true);
         circleL.SetActive(true);
-        doorLeft.transform.DOMove(doorLeftOpen.position, 1);
-        doorRight.transform.DOMove(doorRightOpen.position, 1);
+        doorLeft.transform.DOMove(doorLeftOpen.position, 3);
+        doorRight.transform.DOMove(doorRightOpen.position, 3);
     }
 }
