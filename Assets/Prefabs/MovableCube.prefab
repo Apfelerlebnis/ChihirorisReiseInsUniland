@@ -201,11 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0764ee23a6fe0845af15e7bac6132e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushPower: 1
   GeisterNeeded: 0
   Player: {fileID: 0}
-  Drag: 50
-  AngularDrag: 100
+  Drag: 1
+  AngularDrag: 0
 --- !u!54 &9184354603105219607
 Rigidbody:
   m_ObjectHideFlags: 0
