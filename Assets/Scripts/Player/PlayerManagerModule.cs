@@ -109,8 +109,11 @@ public class PlayerManagerModule : ManagerModule
             foreach (PlayerEntity entity in dudes)
             {
                 entity.GetComponent<PlayerEntity>().Idle();
-
+              /*  int randomAnim = Random.Range(0, dudes.Count);
+                int rndmNm = Random.Range(1, 7);
+                dudes[randomAnim].GetComponentInChildren<UnityEngine.Animator>().SetTrigger(rndmNm);*/
             }
+
 
         }
         if (Input.GetKey("d"))
