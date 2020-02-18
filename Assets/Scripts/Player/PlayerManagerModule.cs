@@ -23,17 +23,20 @@ public class PlayerManagerModule : ManagerModule
     public float lookRotationSpeed = 10f;
     private Vector3 _currentCamSpeed;
     private Vector3 _lastMoveInput;
-    
+    Vector3 yPosition;
+
 
     public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10) | (1 << 2)); //8=player, 9=enemy, 10=Trigger, 2=Ignore Raycast
 
     private void Start()
     {
-        if(dudes.Count<=0)
+        if (dudes.Count <= 0)
         {
             Debug.LogError("Missing DudesLeader in PlayerManagerModule!");
             return;
         }
+        yPosition = transform.position;
+        
     }
 
     void Update()
@@ -66,12 +69,12 @@ public class PlayerManagerModule : ManagerModule
             _dead = true;
         }
         MovePlayer();
-        
+
     }
 
     public PlayerEntity GetDudeLeader()
     {
-        if(dudes.Count<=0)
+        if (dudes.Count <= 0)
         {
             Debug.LogError("No dudes, no leader!");
             return null;
@@ -144,9 +147,9 @@ public class PlayerManagerModule : ManagerModule
                 dude.ChangeState(PlayerEntity.EntityState.Waiting);
             }
 
-            _currentMoveSpeed -= Time.deltaTime/0.25f;
+            _currentMoveSpeed -= Time.deltaTime / 0.25f;
             if (_currentMoveSpeed < 0) _currentMoveSpeed = 0;
-            _currentCamSpeed -= _currentCamSpeed.normalized * Time.deltaTime/ 1f;
+            _currentCamSpeed -= _currentCamSpeed.normalized * Time.deltaTime / 1f;
             if (_currentCamSpeed.magnitude <= 0.01f) _currentCamSpeed = Vector3.zero;
 
             if (_currentMoveSpeed > 0) DoMove();
@@ -166,6 +169,8 @@ public class PlayerManagerModule : ManagerModule
 
             }
 
+
+
             Vector3 moveDir = playerInputVector.normalized;
             _lastMoveInput = moveDir;
             DoMove();
@@ -184,12 +189,22 @@ public class PlayerManagerModule : ManagerModule
             //leader.GetComponent<Rigidbody>().MovePosition(leader.transform.position + (moveDir * leader._nav.speed*0.9f * Time.deltaTime));
             leader.GetComponent<CharacterController>().Move(_lastMoveInput * leader._nav.speed * leaderSpeed * _currentMoveSpeed * Time.deltaTime);
 
-            if(playerInputVector != Vector3.zero)
+            if (playerInputVector != Vector3.zero)
             {
                 Quaternion lookRotation = Quaternion.LookRotation(playerInputVector);
                 leader.transform.rotation = Quaternion.Slerp(leader.transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
             }
 
+
+            Vector3 currentLeaderPos = new Vector3(leader.transform.position.x, leader.transform.position.y, leader.transform.position.z);
+            if (currentLeaderPos.y != yPosition.y)
+                currentLeaderPos = new Vector3(currentLeaderPos.x, Mathf.Lerp(currentLeaderPos.y, yPosition.y, 0.9f), currentLeaderPos.z);
+
+            leader.transform.position = currentLeaderPos;
+            //if (leader.transform.position.y < leader.transform.position.y || leader.transform.position.y > leader.transform.position.y)
+            //{
+            //    leader.transform.position.y
+            //}
 
             //if (playerInputVector != Vector3.zero)
             //    leader.transform.rotation = Quaternion.LookRotation(playerInputVector * 10 * Time.deltaTime);
@@ -242,7 +257,7 @@ public class PlayerManagerModule : ManagerModule
                 toReturn = entity;
             }
 
-            
+
 
             //Entity:           1       2       3
             //distance:         0.5     0.3     0.9 
