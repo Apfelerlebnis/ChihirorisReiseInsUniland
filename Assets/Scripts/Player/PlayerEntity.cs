@@ -22,7 +22,7 @@ public class PlayerEntity : Character
     private Transform _transMoving;
     private Vector3 _posMoving;
     private bool sneakingOn = false;
-
+    public UnityEngine.Animator animator;
     public enum EntityState
     {
         Waiting,
@@ -38,7 +38,6 @@ public class PlayerEntity : Character
     {
         base.Start();
         //runawayTime = -1000;
-
         _transMoving = transform.Find("Moving");
         _posMoving = _transMoving.position;
 
@@ -253,5 +252,12 @@ public class PlayerEntity : Character
 
 
     }
-
+    public void Idle()
+    {
+        animator.SetBool("Walk", false);
+    }
+    public void Walk()
+    {
+        animator.SetBool("Walk", true);
+    }
 }

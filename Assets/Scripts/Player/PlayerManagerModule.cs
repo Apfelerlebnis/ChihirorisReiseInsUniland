@@ -99,21 +99,34 @@ public class PlayerManagerModule : ManagerModule
         if (Input.GetKey("a"))
         {
             playerInputVector.x = -1;
+            AnimWalk();
         }
+        else
+        {
+            foreach (PlayerEntity entity in dudes)
+            {
+                entity.GetComponent<PlayerEntity>().Idle();
 
+            }
+
+        }
         if (Input.GetKey("d"))
         {
             playerInputVector.x = +1;
+            AnimWalk();
         }
+
 
         if (Input.GetKey("w"))
         {
             playerInputVector.z = 1;
+            AnimWalk();
         }
 
         if (Input.GetKey("s"))
         {
             playerInputVector.z = -1;
+            AnimWalk();
         }
 
         /*if (_move.x > 0 && _move.z > 0)
@@ -236,6 +249,16 @@ public class PlayerManagerModule : ManagerModule
             //currentD:         0.5     0.3     
         }
         return toReturn;
+    }
+
+    void AnimWalk()
+    {
+
+            foreach (PlayerEntity entity in dudes)
+            {
+                entity.GetComponent<PlayerEntity>().Walk();
+            }
+
     }
 
 }
