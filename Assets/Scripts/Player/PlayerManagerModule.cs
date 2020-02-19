@@ -7,10 +7,13 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class PlayerManagerModule : ManagerModule
 {
     public List<PlayerEntity> dudes = new List<PlayerEntity>();
+    //public UnityEngine.Animator animator;
+    //private SceneChanger _sceneChanger;
     //public Transform currentLeader;
     //private Vector3 _move;
     [SerializeField] protected Transform cameraFocus;
@@ -24,6 +27,8 @@ public class PlayerManagerModule : ManagerModule
     private Vector3 _currentCamSpeed;
     private Vector3 _lastMoveInput;
     Vector3 yPosition;
+    bool deathReload = false;
+    float reloadTime = 0;
 
     string[] animList = { "Salto", "Rolle 1", "Huepfer", "HuepferDreher", "Dreher" };
     float animTimer = 0;
@@ -41,7 +46,7 @@ public class PlayerManagerModule : ManagerModule
             return;
         }
         yPosition = transform.position;
-        
+        //_sceneChanger = _sceneChanger.GetComponent<SceneChanger>();
     }
 
     void Update()
@@ -52,6 +57,19 @@ public class PlayerManagerModule : ManagerModule
         }
         //HandleCamera();
         CheckIfDead();
+
+        if (deathReload)
+        {
+            reloadTime += Time.deltaTime;
+            if (reloadTime >= 3)
+                ReloadScene(); //Debug.Log(reloadTime);
+
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ReloadScene();
+        }
+
     }
 
     void LateUpdate()
@@ -72,9 +90,18 @@ public class PlayerManagerModule : ManagerModule
         {
             _deathScreen.gameObject.SetActive(true);
             _dead = true;
+            deathReload = true;
+            
         }
         MovePlayer();
 
+    }
+
+    public void ReloadScene()
+    {
+        Scene thisScene = SceneManager.GetActiveScene();
+        
+        SceneManager.LoadScene(thisScene.name);
     }
 
     public PlayerEntity GetDudeLeader()
@@ -93,6 +120,7 @@ public class PlayerManagerModule : ManagerModule
         {
             Debug.LogError("No dudes, no leader!");
             return Vector3.zero;
+            
         }
         return GetDudeLeader().transform.position;
     }

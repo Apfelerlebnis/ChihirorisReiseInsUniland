@@ -5,6 +5,20 @@ public class SceneChanger : MonoBehaviour
 {
     public UnityEngine.Animator animator;
     private int levelToLoad;
+    //private PlayerManagerModule _playerManagerModule;
+
+    //private void Start()
+    //{
+
+    //}
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.R))
+    //    {
+    //        _playerManagerModule.ReloadScene();
+    //    }
+
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +31,7 @@ public class SceneChanger : MonoBehaviour
 
     }
 
-    void FadeToNextLevel()
+    public void FadeToNextLevel()
     {
 
         FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
