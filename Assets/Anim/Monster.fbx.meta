@@ -6,7 +6,17 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert7
+    second: {fileID: 2100000, guid: 117076a55e3877b4fb9349263abcf5b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert8
+    second: {fileID: 2100000, guid: 38dc54c31abb45347a670a91a975ea34, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -71,9 +81,12 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips:
+  - d88a6fba342a5df4a99b3527032d689b
   - f1517880903f2e7439e0fe4f550b5f4e
   - cdd2351616bf128438bf494b81944e27
-  - f3e3de281b2bc814295e7116447ab42a
+  - 12245e5e189529f45a45243148d897e1
+  - f79355a9bc769f74097bdd993c9f47e7
+  - a6b6fea623a311544a98287baa2f7c4b
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
@@ -95,7 +108,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
