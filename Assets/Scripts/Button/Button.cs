@@ -16,13 +16,15 @@ public class Button : MonoBehaviour
     public GameObject particles2;
     public Image GeisterFillImage;
 
+    //List<Collider> collidedObjects = new List<Collider>();
     public bool bDoorOpened = false;
     public float LerpRate = 1.0f;
     float LerpTimer = 0.0f;
     float fFillamount = 0.0f;
+    //int collisionCount;
 
     void OnTriggerEnter(Collider other)
-    {   
+    {
         if (other.gameObject.tag == "Player")
         {
             fFillamount = (float)playerManagerModule.GetComponent<PlayerManagerModule>().dudes.Count / (float)GeisterNeed;
@@ -47,10 +49,28 @@ public class Button : MonoBehaviour
 
     }
 
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    collisionCount++;
+    ////    if(!collidedObjects.Contains(collision.collider) && collision.collider.tag == "Player")
+    ////    {
+    ////        collidedObjects.Add(collision.collider);
+    ////    }
+    //}
+
+    //private void OnCollisionStay(Collision collision)
+    //{
+    //    OnCollisionEnter(collision);
+    //}
+
     void Update()
     {
+        //var numberOfColliders = collidedObjects.Count;
+        //collidedObjects.Clear();
 
+        //Debug.Log(collisionCount);
         //Debug.Log(LerpTimer);
+
         if (GeisterFillImage.fillAmount != fFillamount)
         {
             LerpTimer += Time.deltaTime * LerpRate;
@@ -73,4 +93,7 @@ public class Button : MonoBehaviour
             fFillamount = 0;
         }
     }
+
+
+
 }

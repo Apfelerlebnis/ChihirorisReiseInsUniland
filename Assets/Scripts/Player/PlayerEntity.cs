@@ -9,7 +9,7 @@ using UnityEngine.AI;
 public class PlayerEntity : Character
 {
     //private bool isMoving = false;
-    [SerializeField] protected float swarmSpread = 1;
+    [SerializeField] protected float swarmSpread = 0.8f;
     [Tooltip("Time after taking damage in which the Player can't pick up this unit")]
     [SerializeField] protected float pickUpCooldown = 2;
     //private float _pickUpCooldown;
@@ -158,7 +158,7 @@ public class PlayerEntity : Character
     {
         if (_player.dudes.Count <= 1) return _player.GetLeaderPosistion();
 
-        float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count - 1);
+        float spread = swarmSpread * Mathf.Sqrt(_player.dudes.Count - 1f);
         if (_followCounter==0 && CurrentStateDuration() > 0.5f) _randomOffset = new Vector3(Random.Range(-spread, spread),0,Random.Range(-spread, spread));
         _followOffset = Vector3.Lerp(_followOffset, _randomOffset, 0.1f);
 

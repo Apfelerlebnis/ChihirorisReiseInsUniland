@@ -12253,6 +12253,11 @@ PrefabInstance:
       propertyPath: playerManagerModule
       value: 
       objectReference: {fileID: 2119341797}
+    - target: {fileID: 6963420206766777574, guid: 962537e8cadbd5c4a9adb24009031c70,
+        type: 3}
+      propertyPath: swarmSpread
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7643346240659325169, guid: 962537e8cadbd5c4a9adb24009031c70,
         type: 3}
       propertyPath: m_AngularDrag
