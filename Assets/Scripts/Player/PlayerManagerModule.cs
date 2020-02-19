@@ -25,6 +25,11 @@ public class PlayerManagerModule : ManagerModule
     private Vector3 _lastMoveInput;
     Vector3 yPosition;
 
+    string[] animList = { "Salto", "Rolle 1", "Huepfer", "HuepferDreher", "Dreher" };
+    float animTimer = 0;
+    public int minAnimTime;
+    public int maxAnimTime;
+
 
     public const int LevelLayerMask = ~((1 << 8) | (1 << 9) | (1 << 10) | (1 << 2)); //8=player, 9=enemy, 10=Trigger, 2=Ignore Raycast
 
@@ -109,11 +114,9 @@ public class PlayerManagerModule : ManagerModule
             foreach (PlayerEntity entity in dudes)
             {
                 entity.GetComponent<PlayerEntity>().Idle();
-              /*  int randomAnim = Random.Range(0, dudes.Count);
-                int rndmNm = Random.Range(1, 7);
-                dudes[randomAnim].GetComponentInChildren<UnityEngine.Animator>().SetTrigger(rndmNm);*/
-            }
 
+            }
+            RandomIdleAnimation();
 
         }
         if (Input.GetKey("d"))
@@ -278,5 +281,22 @@ public class PlayerManagerModule : ManagerModule
             }
 
     }
+    void RandomIdleAnimation()
+    {
 
+        if (animTimer <= 0)
+        {
+            System.Random rnd = new System.Random();
+            int randomDude = Random.Range(0, dudes.Count);
+            int randomAnim = rnd.Next(animList.Length);
+            string animSelected = animList[randomAnim];
+            animTimer = Random.Range(minAnimTime, maxAnimTime);
+            dudes[randomDude].GetComponentInChildren<UnityEngine.Animator>().SetTrigger(animSelected);
+        }
+        else
+        {
+            animTimer -= Time.deltaTime;
+        }
+
+    }
 }

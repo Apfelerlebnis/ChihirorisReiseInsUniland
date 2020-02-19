@@ -127,6 +127,8 @@ MonoBehaviour:
   _deathScreen: {fileID: 0}
   leaderSpeed: 0.5
   lookRotationSpeed: 10
+  minAnimTime: 10
+  maxAnimTime: 30
 --- !u!1 &6026890744832820172
 GameObject:
   m_ObjectHideFlags: 0

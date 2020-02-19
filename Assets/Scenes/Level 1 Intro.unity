@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -37192,6 +37192,16 @@ PrefabInstance:
       propertyPath: cameraFocus
       value: 
       objectReference: {fileID: 754264171}
+    - target: {fileID: 2884412330047094106, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: minAnimTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884412330047094106, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: maxAnimTime
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2884412330047094107, guid: 1da65c6730dd0b043ae30f9365a21687,
         type: 3}
       propertyPath: m_Name
