@@ -228,6 +228,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9184354603105219604}
     m_Modifications:
+    - target: {fileID: -7462036371361415008, guid: 024c238784bd76f47bf96a196924cf78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 024c238784bd76f47bf96a196924cf78,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,6 +313,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Moveble_Object
       objectReference: {fileID: 0}
+    - target: {fileID: -594094835925579944, guid: 024c238784bd76f47bf96a196924cf78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1066910053003865102, guid: 024c238784bd76f47bf96a196924cf78,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -318,6 +328,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 424908edc4a911747802c58ce4f36501, type: 2}
+    - target: {fileID: 3667633384733631754, guid: 024c238784bd76f47bf96a196924cf78,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5490870052100550915, guid: 024c238784bd76f47bf96a196924cf78,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
