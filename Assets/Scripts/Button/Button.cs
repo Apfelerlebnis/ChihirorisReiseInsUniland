@@ -13,6 +13,7 @@ public class Button : MonoBehaviour
     public PlayerManagerModule playerManagerModule;
     public Light light;
     public GameObject particles;
+    public GameObject particles2;
     public Image GeisterFillImage;
 
     public bool bDoorOpened = false;
@@ -38,6 +39,7 @@ public class Button : MonoBehaviour
             _gotPressed = true;
             door.OpenDoor();
             particles.gameObject.SetActive(true);
+            //particles2.gameObject.SetActive(true);
             //light.intensity = 0.5f;
         }
         else

@@ -54,7 +54,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6997029150047913696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bc16e35092e50045a3002d18b0b6c59, type: 3}
+  m_Script: {fileID: 11500000, guid: e4aacc8a453c724459018112918cd02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   door: {fileID: 0}
@@ -178,6 +178,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: dc5f408f6140c194a9f328cf0d52e0c6,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.45142
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: dc5f408f6140c194a9f328cf0d52e0c6,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.45142
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: dc5f408f6140c194a9f328cf0d52e0c6,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.45142
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: dc5f408f6140c194a9f328cf0d52e0c6,
         type: 3}

@@ -195,7 +195,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.10408974
+        value: 0.018259048
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -277,6 +277,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2366776149218173715}
     m_Modifications:
+    - target: {fileID: -8395144002639726196, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 38.695
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 38.695
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395144002639726196, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 38.695
+      objectReference: {fileID: 0}
     - target: {fileID: -5259225927154676129, guid: 9b3107fc2bc580c45af38343ab621a3f,
         type: 3}
       propertyPath: m_Layer
@@ -337,6 +352,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0678
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0678
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0678
+      objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 9b3107fc2bc580c45af38343ab621a3f,
         type: 3}
       propertyPath: m_Name
@@ -351,6 +381,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833720299871980622, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 38.695
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833720299871980622, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 38.695
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833720299871980622, guid: 9b3107fc2bc580c45af38343ab621a3f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 38.695
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b3107fc2bc580c45af38343ab621a3f, type: 3}
