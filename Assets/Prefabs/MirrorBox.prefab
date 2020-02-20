@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 1427285674120547425}
   - component: {fileID: 9027708767582828806}
   - component: {fileID: 1201565628584200119}
+  - component: {fileID: 3264076058727511135}
   m_Layer: 1
   m_Name: plane3
   m_TagString: Untagged
@@ -158,6 +159,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &3264076058727511135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3527567632984984883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56b5696eea6e2447bffbae855a15e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedY: -30
+  SpeedZ: 0
+  stopSpeed: 0
 --- !u!1 &4296224019875994204
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +217,7 @@ GameObject:
   - component: {fileID: 2943303310391951230}
   - component: {fileID: 7001664785650969689}
   - component: {fileID: 5751017245332797277}
+  - component: {fileID: 5656778222226854560}
   m_Layer: 1
   m_Name: plane1
   m_TagString: Untagged
@@ -269,6 +286,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5656778222226854560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616373262500641946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56b5696eea6e2447bffbae855a15e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedY: 20
+  SpeedZ: 0
+  stopSpeed: 0
 --- !u!1 &7719874485582823229
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,6 +312,7 @@ GameObject:
   - component: {fileID: 5117039509015521011}
   - component: {fileID: 241018012492790235}
   - component: {fileID: 2830397032116373759}
+  - component: {fileID: 8775499158667981366}
   m_Layer: 1
   m_Name: plane3 (1)
   m_TagString: Untagged
@@ -348,6 +381,21 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &8775499158667981366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7719874485582823229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56b5696eea6e2447bffbae855a15e3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedY: 50
+  SpeedZ: 0
+  stopSpeed: 0
 --- !u!1 &8349599554939660722
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +495,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GeisterNeeded: 1
   Player: {fileID: 0}
+  lr: {fileID: 0}
+  thisObject: {fileID: 0}
   xAchseMoveable: 0
   zAchseMoveable: 0
 --- !u!65 &8349599554939660744
@@ -512,7 +562,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.1512909
+        value: 0.018249512
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -524,9 +574,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.36258453, g: 0.9150943, b: 0.7787312, a: 1}
+      key0: {r: 0, g: 0.6438234, b: 1, a: 1}
       key1: {r: 0, g: 0.6438234, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
+      key2: {r: 0, g: 0.6438234, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -534,7 +584,7 @@ LineRenderer:
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
       ctime1: 65535
-      ctime2: 0
+      ctime2: 65535
       ctime3: 0
       ctime4: 0
       ctime5: 0
