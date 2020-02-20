@@ -5,7 +5,7 @@ using System.Collections;
 
 public class SceneChanger : MonoBehaviour
 {
-    public UnityEngine.Animator animator;
+    public UnityEngine.Animator animatorMain;
 
     private int levelToLoad;
     public int dudesImLevel;
@@ -29,13 +29,18 @@ public class SceneChanger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if (SceneManager.GetActiveScene().name != "Level 5 Boss")
+            if (SceneManager.GetActiveScene().name != "Level 5 Boss 1")
             {
 
-
+                FadeToNextLevel();
             }
             else
-                FadeToNextLevel();
+            {
+                text.text = "Spirits collected:" + _playerManagerModule.dudes.Count + " / " + dudesImLevel;
+                animatorMain.SetTrigger("End_Dudes 0");
+                StartCoroutine(timer2());
+            }
+
 
         }
 
@@ -51,7 +56,7 @@ public class SceneChanger : MonoBehaviour
     void FadeToLevel(int scene)
     {
         levelToLoad = scene;
-        animator.SetTrigger("Fade_Out");
+        animatorMain.SetTrigger("Fade_Out");
 
     }
 
@@ -75,6 +80,12 @@ public class SceneChanger : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         OnFadeComplete();
+    }
+
+    private IEnumerator timer2()
+    {
+        yield return new WaitForSeconds(5f);
+        animatorMain.SetTrigger("End");
     }
 
 }
