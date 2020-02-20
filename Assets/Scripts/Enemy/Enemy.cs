@@ -46,7 +46,9 @@ public class Enemy : Character
     public float attackInterval = 0.5f;
     private float _attackTimer = 0;
 
-    public UnityEngine.Animator animator;
+    float animTimer = 0f;
+    string[] animList = { "Idle2", "Idle3" };
+    string[] animListW = { "Walk2", "Walk3" };
 
     public float followSpeed = 1.5f;
     public float homingSpeed = 0.5f;
@@ -115,10 +117,14 @@ public class Enemy : Character
     void UpdateGuard()
     {
         if (CheckDying()) return;
+
+        AnimIdle();
         switch (enemyState)
         {
+
             case State.Standing:
                 if (CheckRange(activationRange)) ChangeState(State.Attacking);
+                
                 break;
             case State.Attacking:
                 if (!CheckRange(activationRange + 1))
@@ -164,12 +170,14 @@ public class Enemy : Character
 
     void UpdateDefault()
     {
+
         if (CheckDying()) return;
         if (FollowAttackHome()) return;
-
+        AnimIdle();
         switch (enemyState)
         {
             case State.Standing:
+                AnimWalk(false);
                 if (CheckRange(activationRange)) { ChangeState(State.Following); return; }
                 break;
             default:
@@ -210,13 +218,14 @@ public class Enemy : Character
         _attackTimer += Time.deltaTime;
         if (_attackTimer < attackInterval) return;
         _attackTimer = 0;
-
+        GetComponentInChildren<UnityEngine.Animator>().SetTrigger("Attack");
         _player.GotHit(damage);
     }
 
 
     private void FollowPlayer()
     {
+        AnimWalk(true);
         _followTimer += Time.deltaTime;
         if (CheckRange(attackRange * 0.5f, _nav.destination)) return;
         if (_followTimer < 0.5f) return;
@@ -284,4 +293,33 @@ public class Enemy : Character
         _dmg.GetComponent<SphereCollider>().radius = minHittingDistance;
         _time = 0;
     }*/
+
+    void AnimIdle()
+    {
+        if (animTimer <= 0)
+        {
+            System.Random rnd = new System.Random();
+            int randomAnim = rnd.Next(animList.Length);
+            string animSelected = animList[randomAnim];
+            animTimer = Random.Range(10, 20);
+            GetComponentInChildren<UnityEngine.Animator>().SetTrigger(animSelected);
+        }
+        else
+        {
+            animTimer -= Time.deltaTime;
+        }
+
+
+    }
+
+    void AnimWalk(bool onOff)
+    {
+            System.Random rnd = new System.Random();
+            int randomAnim = rnd.Next(animListW.Length);
+            string animSelected = animListW[randomAnim];
+            animTimer = Random.Range(10, 20);
+            GetComponentInChildren<UnityEngine.Animator>().SetBool(animSelected, onOff);
+
+
+    }
 }
