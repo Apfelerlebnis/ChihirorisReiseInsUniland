@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
+using System.Collections;
 
 public class SceneChanger : MonoBehaviour
 {
     public UnityEngine.Animator animator;
+
     private int levelToLoad;
-    //private PlayerManagerModule _playerManagerModule;
+    public int dudesImLevel;
+    public TextMeshProUGUI text;
+    public PlayerManagerModule _playerManagerModule;
 
     //private void Start()
     //{
@@ -47,8 +52,24 @@ public class SceneChanger : MonoBehaviour
 
     void OnFadeComplete()
     {
+        
+
         SceneManager.LoadScene(levelToLoad);
 
+    }
+
+    void ShowDudesCollected()
+    {
+
+        text.text = "Spirits collected:" + _playerManagerModule.dudes.Count + " / " + dudesImLevel;
+        StartCoroutine(timer());
+        
+    }
+
+    private IEnumerator timer()
+    {
+        yield return new WaitForSeconds(5f);
+        OnFadeComplete();
     }
 
 }
