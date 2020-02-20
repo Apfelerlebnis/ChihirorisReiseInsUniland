@@ -6,6 +6,8 @@ public class Mirror : MonoBehaviour
 {
     public int GeisterNeeded;
     public PlayerManagerModule Player;
+    public LineRenderer lr;
+    public GameObject thisObject;
     public bool xAchseMoveable;
     public bool zAchseMoveable;
     private Ray ray;
@@ -13,16 +15,19 @@ public class Mirror : MonoBehaviour
     bool doorOpen = false;
     private void Update()
     {
-        if(GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && xAchseMoveable == true)
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.inertiaTensorRotation = new Quaternion(0, rb.inertiaTensorRotation.y, 0, rb.inertiaTensorRotation.w);
+        rb.angularVelocity = new Vector3(0,rb.angularVelocity.y, 0);
+        if (GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && xAchseMoveable == true)
         {
 
-            GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionX & ~RigidbodyConstraints.FreezeRotationZ;
+            rb.constraints = ~RigidbodyConstraints.FreezePositionX & ~RigidbodyConstraints.FreezeRotationZ;
         }
 
         if (GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && zAchseMoveable == true)
         {
 
-            GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionZ & ~RigidbodyConstraints.FreezeRotationZ;
+            rb.constraints = ~RigidbodyConstraints.FreezePositionZ & ~RigidbodyConstraints.FreezeRotationZ;
 
         }
 
@@ -30,10 +35,12 @@ public class Mirror : MonoBehaviour
     }
     public void CastHit()
     {
-          ray = new Ray(transform.position, transform.forward);
-          Physics.Raycast(new Vector3(0, 1, 0), transform.forward, out RaycastHit hit, 5000, PlayerManagerModule.LevelLayerMask);
-          if (hit.collider)
-          {
+        Vector3 origin = transform.InverseTransformPoint(lr.GetPosition(0));
+        ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.61f, transform.position.z), new Vector3(0,0,-1));
+          Vector3 forward = transform.InverseTransformDirection(-transform.forward);
+          Physics.Raycast(ray.origin, -transform.forward, out RaycastHit hit, Mathf.Infinity, PlayerManagerModule.LevelLayerMask);
+        if (hit.collider)
+        {
             Vector3 hitPoint2 = transform.InverseTransformPoint(hit.point);
             GetComponent<LineRenderer>().SetPosition(1, hitPoint2);
             if (hit.collider.gameObject.CompareTag("LightTrigger") == true && doorOpen == false)
@@ -49,10 +56,11 @@ public class Mirror : MonoBehaviour
                 doorOpen = false;
 
             }
-                
 
-          }
 
+        }
+        else
+            return;
        
     }
   
