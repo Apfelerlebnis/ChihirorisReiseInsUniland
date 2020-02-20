@@ -49,6 +49,7 @@ public class Enemy : Character
     float animTimer = 0f;
     string[] animList = { "Idle2", "Idle3" };
     string[] animListW = { "Walk2", "Walk3" };
+    bool walk = false;
 
     public float followSpeed = 1.5f;
     public float homingSpeed = 0.5f;
@@ -170,10 +171,11 @@ public class Enemy : Character
 
     void UpdateDefault()
     {
-
+        walk = false;
+        AnimIdle();
         if (CheckDying()) return;
         if (FollowAttackHome()) return;
-        AnimIdle();
+        
         switch (enemyState)
         {
             case State.Standing:
@@ -225,6 +227,11 @@ public class Enemy : Character
 
     private void FollowPlayer()
     {
+        if(walk == true)
+        {
+            GetComponentInChildren<UnityEngine.Animator>().enabled = false;
+            GetComponentInChildren<UnityEngine.Animator>().enabled = true;
+        }
         AnimWalk(true);
         _followTimer += Time.deltaTime;
         if (CheckRange(attackRange * 0.5f, _nav.destination)) return;
@@ -296,30 +303,30 @@ public class Enemy : Character
 
     void AnimIdle()
     {
+        
         if (animTimer <= 0)
         {
             System.Random rnd = new System.Random();
             int randomAnim = rnd.Next(animList.Length);
             string animSelected = animList[randomAnim];
-            animTimer = Random.Range(10, 20);
+            animTimer = Random.Range(10, 15);
             GetComponentInChildren<UnityEngine.Animator>().SetTrigger(animSelected);
         }
         else
         {
             animTimer -= Time.deltaTime;
         }
-
-
     }
 
     void AnimWalk(bool onOff)
     {
-            System.Random rnd = new System.Random();
+        if(walk==false)
+            walk = true;
+        System.Random rnd = new System.Random();
             int randomAnim = rnd.Next(animListW.Length);
             string animSelected = animListW[randomAnim];
-            animTimer = Random.Range(10, 20);
             GetComponentInChildren<UnityEngine.Animator>().SetBool(animSelected, onOff);
-
+        
 
     }
 }

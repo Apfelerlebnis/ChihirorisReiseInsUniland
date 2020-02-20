@@ -106,21 +106,21 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.19
-    agentHeight: 1.34
-    agentSlope: 20.34
-    agentClimb: 0.27
+    agentRadius: 0.07
+    agentHeight: 0.05
+    agentSlope: 5.6
+    agentClimb: 0.01
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.06333333
+    cellSize: 0.023333333
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 66175471609d7224d89f114b9ad38ea4, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 892808195235eb54db86809668a54b87, type: 2}
 --- !u!1001 &1747499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192,6 +192,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -292,6 +302,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -524,6 +544,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -847,6 +877,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babymauer (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
 --- !u!1001 &22121782
@@ -920,6 +960,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -1429,6 +1479,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (29)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &44395490 stripped
@@ -1667,7 +1727,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &61324535
 MeshCollider:
@@ -1826,6 +1886,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -2419,7 +2489,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &82316215
 Transform:
@@ -2574,6 +2644,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (6)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!4 &86822765 stripped
@@ -2653,6 +2733,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -2759,6 +2849,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (41)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &93477906 stripped
@@ -2858,6 +2958,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -3226,6 +3336,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!4 &109198842 stripped
@@ -3545,6 +3665,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -4038,6 +4168,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babymauer (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
 --- !u!1001 &127570612
@@ -4245,6 +4385,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (11)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &135652793 stripped
@@ -4449,6 +4599,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -4915,7 +5075,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &164343805
 Transform:
@@ -5663,6 +5823,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (28)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &198247254 stripped
@@ -5762,6 +5932,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babymauer (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
@@ -6043,6 +6223,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (17)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &227943461 stripped
@@ -6159,6 +6349,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (15)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &231169642 stripped
@@ -6203,8 +6403,8 @@ GameObject:
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &236998672
 MeshCollider:
@@ -6602,6 +6802,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (20)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!4 &261517456 stripped
@@ -6792,6 +7002,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (50)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!4 &267068167 stripped
@@ -6871,6 +7091,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -6966,6 +7196,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babymauer (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
@@ -7507,6 +7747,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (22)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &291438680
@@ -7610,7 +7860,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &293664042
 Transform:
@@ -7934,7 +8184,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &311663298
 Transform:
@@ -8376,6 +8626,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (32)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &324618856 stripped
@@ -8722,6 +8982,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -9582,6 +9852,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (45)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &381218361 stripped
@@ -9871,6 +10151,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (35)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &390347679 stripped
@@ -10111,6 +10401,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -10717,6 +11017,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (25)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &447596612
@@ -11270,6 +11580,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (33)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &478426439
@@ -11804,6 +12124,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (14)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &491783885 stripped
@@ -11909,6 +12239,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (24)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!4 &493355042 stripped
@@ -11981,7 +12321,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &506075481
 Transform:
@@ -12583,6 +12923,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (10)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &537060505
@@ -12656,6 +13006,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (57)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -12814,6 +13174,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -13024,6 +13394,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (46)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -13619,6 +13999,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babymauer (10)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
 --- !u!1 &568535844 stripped
@@ -13696,7 +14086,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &578023958
 Transform:
@@ -13961,6 +14351,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (34)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &591523385
@@ -14141,7 +14541,12 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
@@ -14829,7 +15234,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &634246981
 MeshCollider:
@@ -14983,6 +15388,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -16060,6 +16475,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (26)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &690692041 stripped
@@ -16506,6 +16931,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &741164251
@@ -16683,7 +17118,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &742240609
 MeshCollider:
@@ -16916,7 +17351,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &750613732
 Transform:
@@ -17079,6 +17514,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -17626,7 +18071,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &772013388
 Transform:
@@ -18074,6 +18519,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (39)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!4 &795771259 stripped
@@ -18283,6 +18738,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (44)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -18570,6 +19035,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babymauer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
@@ -18947,7 +19422,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &829909154
 Transform:
@@ -19734,6 +20209,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (7)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1001 &883197467
@@ -19807,6 +20292,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -19886,6 +20381,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -20129,6 +20634,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (54)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &909920366
@@ -20207,6 +20722,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -20877,7 +21402,7 @@ GameObject:
   m_Name: "S\xE4ulen"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &933342952
@@ -21023,6 +21548,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -21519,6 +22054,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &985598638 stripped
@@ -21804,7 +22349,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1006508635
 Transform:
@@ -21985,6 +22530,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (52)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -22170,6 +22725,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (41)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -22397,6 +22962,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babymauer (11)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
 --- !u!1 &1023045905 stripped
@@ -22586,6 +23161,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -23471,6 +24056,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (53)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &1079903787
@@ -23544,6 +24139,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -23930,6 +24535,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babymauer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
@@ -24415,6 +25030,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (12)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &1116817721 stripped
@@ -24629,6 +25254,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -24845,6 +25480,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -25734,7 +26379,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1149092881
 MeshCollider:
@@ -26372,7 +27017,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1175594183
 Transform:
@@ -27388,6 +28033,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (16)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &1212005927 stripped
@@ -27917,6 +28572,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babymauer (4)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
 --- !u!1001 &1240830085
@@ -28232,6 +28897,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (15)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &1266020670 stripped
@@ -28289,7 +28964,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1283584437
 Transform:
@@ -28437,6 +29112,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -29002,6 +29687,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (35)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &1310887611 stripped
@@ -29101,6 +29796,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -29634,6 +30339,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (36)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &1356572515 stripped
@@ -29825,6 +30540,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (9)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1001 &1364619332
@@ -29977,6 +30702,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -30136,6 +30871,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -30634,6 +31379,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (16)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &1410275050
@@ -30707,6 +31462,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -30791,6 +31556,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (58)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -30938,6 +31713,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -31673,6 +32458,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (48)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &1457575940 stripped
@@ -32042,6 +32837,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (38)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &1477554924 stripped
@@ -32360,8 +33165,8 @@ GameObject:
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1482381128
 MeshCollider:
@@ -33750,6 +34555,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (23)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &1565910498 stripped
@@ -34040,6 +34855,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -34332,6 +35157,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (18)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &1609875444
@@ -34405,6 +35240,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -34577,6 +35422,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -35454,6 +36309,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babymauer (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3d15535ea33b8c7458220729d5ed318d,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d15535ea33b8c7458220729d5ed318d, type: 3}
 --- !u!1 &1654308262 stripped
@@ -35499,7 +36364,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1656209853
 Transform:
@@ -36458,6 +37323,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (51)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &1689107687
@@ -37220,6 +38095,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (55)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1001 &1748737301
@@ -37298,6 +38183,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (47)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -37409,6 +38304,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -37681,6 +38586,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babystein (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
@@ -38231,6 +39146,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (34)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &1773311162 stripped
@@ -38336,6 +39261,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -38888,6 +39823,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (28)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &1799093714 stripped
@@ -39351,6 +40296,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (5)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1001 &1826036054
@@ -39499,6 +40454,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (22)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1 &1832810680
@@ -39638,6 +40603,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -39954,6 +40929,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -41411,6 +42396,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (18)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1001 &1904955000
@@ -41499,6 +42494,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -41802,6 +42807,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (30)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -42229,6 +43244,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (31)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &1941423439 stripped
@@ -42431,6 +43456,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (26)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1001 &1969013950
@@ -42504,6 +43539,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -42593,7 +43638,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1984049826
 Transform:
@@ -43702,6 +44747,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (8)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!4 &2028750590 stripped
@@ -44037,7 +45092,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &2045781951
 MeshCollider:
@@ -44819,6 +45874,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -45615,6 +46680,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babystein (3)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c5a35422123863149ab0ec370041e8de,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5a35422123863149ab0ec370041e8de, type: 3}
 --- !u!1001 &2116954372
@@ -45688,6 +46763,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: babywall (56)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
@@ -46156,6 +47241,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: babywall (49)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8ab2edef1fd64b64cb83ca206f647261,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
 --- !u!1 &2130956476 stripped
@@ -46253,7 +47348,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &2134091618
 MeshCollider:
