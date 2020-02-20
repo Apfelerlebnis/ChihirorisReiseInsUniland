@@ -29,7 +29,7 @@ public class SceneChanger : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            if (SceneManager.GetActiveScene().name != "Level 5 Boss 1")
+            if (SceneManager.GetActiveScene().name != "Level 5 Boss")
             {
 
                 FadeToNextLevel();
