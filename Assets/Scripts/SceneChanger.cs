@@ -37,7 +37,7 @@ public class SceneChanger : MonoBehaviour
             else
             {
                 text.text = "Spirits collected:" + _playerManagerModule.dudes.Count + " / " + dudesImLevel;
-                animatorMain.SetTrigger("End_Dudes 0");
+                animatorMain.SetTrigger("Fade_Out");
                 StartCoroutine(timer2());
             }
 
