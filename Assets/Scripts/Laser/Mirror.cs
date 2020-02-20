@@ -31,7 +31,8 @@ public class Mirror : MonoBehaviour
     public void CastHit()
     {
           ray = new Ray(transform.position, transform.forward);
-          Physics.Raycast(ray.origin, transform.forward, out RaycastHit hit, 5000, PlayerManagerModule.LevelLayerMask);
+          Vector3 startPos = transform.InverseTransformPoint(new Vector3(0, 1, 0));
+          Physics.Raycast(startPos, transform.forward, out RaycastHit hit, 5000, PlayerManagerModule.LevelLayerMask);
           if (hit.collider)
           {
             Vector3 hitPoint2 = transform.InverseTransformPoint(hit.point);
