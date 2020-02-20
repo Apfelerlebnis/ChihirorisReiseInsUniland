@@ -33,8 +33,8 @@ public class Button : MonoBehaviour
         //Debug.Log(playerManagerModule.GetComponent<PlayerManagerModule>().dudes.Count);
         
 
-        if (ObjectNeeded == true && (other.gameObject.layer == LayerMask.NameToLayer("MoveableObject") && !_gotPressed) || 
-            GeisterNeed <= playerManagerModule.GetComponent<PlayerManagerModule>().dudes.Count && (other.gameObject.layer == LayerMask.NameToLayer("Player") && !_gotPressed && GeisterNeeded == true))
+        if ((ObjectNeeded == true && (other.gameObject.layer == LayerMask.NameToLayer("MoveableObject") && !_gotPressed)) || 
+            (GeisterNeed <= playerManagerModule.GetComponent<PlayerManagerModule>().dudes.Count && ((other.gameObject.layer == LayerMask.NameToLayer("Player") || (other.gameObject.layer == LayerMask.NameToLayer("Ignore Raycast")) && !_gotPressed && GeisterNeeded == true))))
         {
             
 
