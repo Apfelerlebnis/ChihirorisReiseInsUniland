@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -106,21 +106,21 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.14
-    agentHeight: 0.06
-    agentSlope: 3.9
-    agentClimb: 0.06
+    agentRadius: 0.08
+    agentHeight: 0.05
+    agentSlope: 0
+    agentClimb: 0.02
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.046666667
+    cellSize: 0.026666665
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: d8fb02dca4bf4374bbf3297a90a05d23, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: c97fa97a8be5478499cebda3a3524874, type: 2}
 --- !u!1001 &8531045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5837,7 +5837,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 457639331}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 315d19694f013804e940d36cf3a2f671, type: 3}
 --- !u!4 &736734033 stripped
@@ -12074,6 +12074,12 @@ PrefabInstance:
       propertyPath: cameraFocus
       value: 
       objectReference: {fileID: 800681509}
+    - target: {fileID: 2884412330047094106, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: _deathScreen
+      value: 
+      objectReference: {fileID: 5259708248645850347, guid: 7d6c760b362154545b92e408363e62f5,
+        type: 3}
     - target: {fileID: 2884412330047094107, guid: 1da65c6730dd0b043ae30f9365a21687,
         type: 3}
       propertyPath: m_Name
@@ -15124,7 +15130,7 @@ PrefabInstance:
         type: 3}
       propertyPath: playerManagerModule
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 457639331}
     - target: {fileID: 8102571348683348452, guid: c9e89194a3b22e645b6254d7b426a79d,
         type: 3}
       propertyPath: m_Name
@@ -15223,7 +15229,12 @@ PrefabInstance:
     - target: {fileID: 4168745023911377055, guid: c0ec99e285720bc4d94e08703e3400e5,
         type: 3}
       propertyPath: enemyType
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4168745023911377055, guid: c0ec99e285720bc4d94e08703e3400e5,
+        type: 3}
+      propertyPath: _nav
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7905681324315395291, guid: c0ec99e285720bc4d94e08703e3400e5,
         type: 3}
