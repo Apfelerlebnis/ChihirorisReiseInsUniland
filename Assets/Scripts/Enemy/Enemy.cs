@@ -46,6 +46,8 @@ public class Enemy : Character
     public float attackInterval = 0.5f;
     private float _attackTimer = 0;
 
+    public UnityEngine.Animator animator;
+
     public float followSpeed = 1.5f;
     public float homingSpeed = 0.5f;
     public float followDuration = 4.0f;
@@ -219,7 +221,6 @@ public class Enemy : Character
         if (CheckRange(attackRange * 0.5f, _nav.destination)) return;
         if (_followTimer < 0.5f) return;
         _followTimer = 0;
-
         //Debug.Log("Follow:" + _nav.destination + " -> " + _player.GetCenterPosition());
         _nav.destination = _player.GetLeaderPosistion();
     }
