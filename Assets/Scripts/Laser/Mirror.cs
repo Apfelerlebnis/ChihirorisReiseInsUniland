@@ -18,18 +18,6 @@ public class Mirror : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.inertiaTensorRotation = new Quaternion(0, rb.inertiaTensorRotation.y, 0, rb.inertiaTensorRotation.w);
         rb.angularVelocity = new Vector3(0,rb.angularVelocity.y, 0);
-        if (GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && xAchseMoveable == true)
-        {
-
-            rb.constraints = ~RigidbodyConstraints.FreezePositionX & ~RigidbodyConstraints.FreezeRotationZ;
-        }
-
-        if (GeisterNeeded <= Player.GetComponent<PlayerManagerModule>().dudes.Count && zAchseMoveable == true)
-        {
-
-            rb.constraints = ~RigidbodyConstraints.FreezePositionZ & ~RigidbodyConstraints.FreezeRotationZ;
-
-        }
 
 
     }
