@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public bool gameIsRunning = true;
     public GameObject pauseMenuUI;
+    public AudioManager am;
 
     // Update is called once per frame
     void Update()
@@ -46,6 +48,14 @@ public class PauseMenu : MonoBehaviour
     {
         Debug.Log("Quits game...");
         Application.Quit();
+    }
+
+    public void PlayAgain()
+    {
+
+        SceneManager.LoadScene("Level 1 Intro");
+        AudioManager.Destroy(GameObject.Find("AudioManager"));
+
     }
 
 }

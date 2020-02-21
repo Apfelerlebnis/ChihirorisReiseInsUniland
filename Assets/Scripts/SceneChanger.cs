@@ -11,6 +11,7 @@ public class SceneChanger : MonoBehaviour
     public int dudesImLevel;
     public TextMeshProUGUI text;
     public PlayerManagerModule _playerManagerModule;
+    public GameObject EndCredits;
 
     //private void Start()
     //{
@@ -37,7 +38,7 @@ public class SceneChanger : MonoBehaviour
             else
             {
                 text.text = "Spirits collected:" + _playerManagerModule.dudes.Count + " / " + dudesImLevel;
-                animatorMain.SetTrigger("Fade_Out");
+                animatorMain.SetTrigger("End_Dudes 0");
                 StartCoroutine(timer2());
             }
 
@@ -85,7 +86,22 @@ public class SceneChanger : MonoBehaviour
     private IEnumerator timer2()
     {
         yield return new WaitForSeconds(5f);
-        animatorMain.SetTrigger("End");
+        animatorMain.SetTrigger("End");    
     }
+
+    private IEnumerator timer3()
+    {
+        yield return new WaitForSeconds(1f);
+        animatorMain.enabled = false;
+        
+    }
+    public void Credits()
+    {
+        animatorMain.SetTrigger("Fade_Out 1");
+        timer3();
+        EndCredits.SetActive(true);
+    }
+
+
 
 }
