@@ -26,7 +26,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
-  m_Children: []
+  m_Children:
+  - {fileID: 4985612804276005570}
   m_Father: {fileID: 6963420206766777570}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56,8 +57,7 @@ Transform:
   m_LocalRotation: {x: -0.70576125, y: 0.70844984, z: 4.338004e-17, w: -4.3215413e-17}
   m_LocalPosition: {x: -0.87610316, y: 1.110223e-18, z: -2.033782e-32}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4985612804276005570}
+  m_Children: []
   m_Father: {fileID: 7651279329309551756}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -224,11 +224,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2728562051332302219}
-  m_LocalRotation: {x: -6.0999514e-17, y: 6.12319e-17, z: -0, w: -1}
-  m_LocalPosition: {x: -0.00888882, y: 2.8096187, z: 0}
-  m_LocalScale: {x: 7.142855, y: 7.142855, z: 7.1428537}
+  m_LocalRotation: {x: -6.617444e-24, y: -3.308722e-24, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0001553524, y: 0.2780536, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8072196322684536936}
+  m_Father: {fileID: 8436433250911274493}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &8174324921751491372
@@ -243,8 +243,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.43529415, g: 0.79581076, b: 1, a: 1}
-  m_Intensity: 0.15
-  m_Range: 1
+  m_Intensity: 0.25
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -358,7 +358,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 38dc54c31abb45347a670a91a975ea34, type: 2}
-  - {fileID: 2100000, guid: 09a247394fa71bb40abccb68cae26507, type: 2}
+  - {fileID: 2100000, guid: 1f845703a615c074fa2d8bd729c03902, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 3678508751649493042}
   - component: {fileID: 7643346240659325169}
   m_Layer: 8
-  m_Name: PlayerSphere
+  m_Name: PlayerSphereMain
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -424,7 +424,7 @@ Transform:
   m_GameObject: {fileID: 6963420206766777569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25508, y: 0.25508, z: 0.25508}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 8436433250911274493}
   - {fileID: 4671237823829214517}

@@ -238,7 +238,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2728562051332302219}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -358,7 +358,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 38dc54c31abb45347a670a91a975ea34, type: 2}
-  - {fileID: 2100000, guid: 09a247394fa71bb40abccb68cae26507, type: 2}
+  - {fileID: 2100000, guid: 1f845703a615c074fa2d8bd729c03902, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -423,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 6963420206766777569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25508, y: 0.25508, z: 0.25508}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 8436433250911274493}
   - {fileID: 4671237823829214517}
