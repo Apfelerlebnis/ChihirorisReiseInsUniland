@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using DG.Tweening;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
 
 public class PlayerManagerModule : ManagerModule
 {
     public List<PlayerEntity> dudes = new List<PlayerEntity>();
-    //public UnityEngine.Animator animator;
-    //private SceneChanger _sceneChanger;
-    //public Transform currentLeader;
-    //private Vector3 _move;
     [SerializeField] protected Transform cameraFocus;
     private float _time = 0;
     [SerializeField] private float immuneTimeAfterHit = 2;
@@ -29,6 +19,12 @@ public class PlayerManagerModule : ManagerModule
     Vector3 yPosition;
     bool deathReload = false;
     float reloadTime = 0;
+
+    public Vector3 MoveVector = Vector3.zero;
+    public Vector3 ShouldVector = Vector3.zero;
+    [SerializeField] protected float accelerationSpeed = 0.1f;
+    public float MoveSpeed = 1f;
+
 
     string[] animList = { "Salto", "Rolle 1", "Huepfer", "HuepferDreher", "Dreher" };
     float animTimer = 0;
@@ -46,7 +42,6 @@ public class PlayerManagerModule : ManagerModule
             return;
         }
         yPosition = transform.position;
-        //_sceneChanger = _sceneChanger.GetComponent<SceneChanger>();
     }
 
     void Update()
@@ -55,14 +50,13 @@ public class PlayerManagerModule : ManagerModule
         {
             MovePlayer();
         }
-        //HandleCamera();
         CheckIfDead();
 
         if (deathReload)
         {
             reloadTime += Time.deltaTime;
             if (reloadTime >= 3)
-                ReloadScene(); //Debug.Log(reloadTime);
+                ReloadScene();
 
         }
         if (Input.GetKeyDown(KeyCode.R))
@@ -79,9 +73,7 @@ public class PlayerManagerModule : ManagerModule
             Vector3 pos = GetLeaderPosistion();
             pos += _currentCamSpeed * 0.75f;
             cameraFocus.position = Vector3.Lerp(cameraFocus.position, pos, 0.1f);
-            //cameraFocus.position = pos;
         }
-
     }
 
     private void CheckIfDead()
@@ -166,16 +158,28 @@ public class PlayerManagerModule : ManagerModule
             AnimWalk();
         }
 
-        /*if (_move.x > 0 && _move.z > 0)
+        if (Input.GetKey("s"))
         {
-            _move.x = Mathf.Sqrt(_move.x);
-            _move.z = Mathf.Sqrt(_move.z);
-        }*/
+            playerInputVector.z = -1;
+            AnimWalk();
+        }
+
+        if (Input.GetAxis("JoystickHorizontal") > 0.1 || Input.GetAxis("JoystickHorizontal") < -0.1)
+        {
+            playerInputVector.x = Input.GetAxis("JoystickHorizontal") * MoveSpeed;
+            AnimWalk();
+            
+        }
+
+        if (Input.GetAxis("JoystickVertical") > 0.1 || Input.GetAxis("JoystickVertical") < -0.1)
+        {
+            playerInputVector.z = -Input.GetAxis("JoystickVertical") * MoveSpeed;
+            AnimWalk();
+        }
+
 
         if (playerInputVector == Vector3.zero)
         {
-            //currentLeader.position = GetCenterPosition();
-            //currentLeader.position = cameraFocus.position;
             foreach (PlayerEntity dude in dudes)
             {
                 dude.ChangeState(PlayerEntity.EntityState.Waiting);
@@ -201,6 +205,7 @@ public class PlayerManagerModule : ManagerModule
             {
                 dude.ChangeState(PlayerEntity.EntityState.Follow);
 
+
             }
 
 
@@ -208,19 +213,11 @@ public class PlayerManagerModule : ManagerModule
             Vector3 moveDir = playerInputVector.normalized;
             _lastMoveInput = moveDir;
             DoMove();
-            //currentLeader.transform.position = GetDudesCenterPosition() + moveDir;
-
-            /*if (Physics.Raycast(new Ray(cameraFocus.position, moveDir), out RaycastHit hit, moveDir.magnitude, LevelLayerMask))
-            {
-                //Debug.Log(hit.collider.name+" "+hit.point);
-                //currentLeader.transform.position = hit.point;
-            }*/
         }
 
         void DoMove()
         {
             var leader = GetDudeLeader();
-            //leader.GetComponent<Rigidbody>().MovePosition(leader.transform.position + (moveDir * leader._nav.speed*0.9f * Time.deltaTime));
             leader.GetComponent<CharacterController>().Move(_lastMoveInput * leader._nav.speed * leaderSpeed * _currentMoveSpeed * Time.deltaTime);
 
             if (playerInputVector != Vector3.zero)
@@ -235,28 +232,8 @@ public class PlayerManagerModule : ManagerModule
                 currentLeaderPos = new Vector3(currentLeaderPos.x, Mathf.Lerp(currentLeaderPos.y, yPosition.y, 0.9f), currentLeaderPos.z);
 
             leader.transform.position = currentLeaderPos;
-            //if (leader.transform.position.y < leader.transform.position.y || leader.transform.position.y > leader.transform.position.y)
-            //{
-            //    leader.transform.position.y
-            //}
-
-            //if (playerInputVector != Vector3.zero)
-            //    leader.transform.rotation = Quaternion.LookRotation(playerInputVector * 10 * Time.deltaTime);
-            //leader.transform.DOLookAt(playerInputVector, 2f, AxisConstraint.Y, Vector3.up);
         }
 
-
-        /*if (dudes.Count == 1)
-        {
-            dudes[0].transform.position += _move * Time.deltaTime; 
-            currentLeader.transform.position += _move * Time.deltaTime;
-            dudes[0].isMoving = false;
-        }
-        else
-        {
-            currentLeader.transform.position += _move * Time.deltaTime;
-        }*/
-        // _move = Vector3.zero;
     }
 
     public void GotHit(int damage)
@@ -270,7 +247,6 @@ public class PlayerManagerModule : ManagerModule
             int idx = 0;
             if (dudes.Count > 1) idx = Random.Range(1, dudes.Count);
             dudes[idx].ChangeState(PlayerEntity.EntityState.Runaway);
-            //if (dudes.Count <= 0) DieScreen();
         }
     }
 
@@ -283,19 +259,13 @@ public class PlayerManagerModule : ManagerModule
         foreach (PlayerEntity entity in dudes)
         {
             if (dudes.Count > 1 && entity == leader) continue;
-            //Finde die entity mit der geringsten Distanz zu position
             float distanceToThisEntity = Vector3.Distance(entity.transform.position, position);
             if (currentDistance == 0 || currentDistance > distanceToThisEntity)
             {
                 currentDistance = distanceToThisEntity;
                 toReturn = entity;
             }
-
-
-
-            //Entity:           1       2       3
-            //distance:         0.5     0.3     0.9 
-            //currentD:         0.5     0.3     
+  
         }
         return toReturn;
     }
