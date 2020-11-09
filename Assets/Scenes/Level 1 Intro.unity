@@ -29266,6 +29266,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1302097593 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7643346240659325169, guid: e88c8798de52b344fae33475cde41c09,
+    type: 3}
+  m_PrefabInstance: {fileID: 1176412379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1306255182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 7bd586a26d1563c47b33604ea83a13dc,
@@ -37977,6 +37983,16 @@ PrefabInstance:
         type: 3}
       propertyPath: maxAnimTime
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884412330047094106, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: rigidbody
+      value: 
+      objectReference: {fileID: 1302097593}
+    - target: {fileID: 2884412330047094106, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: friction
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2884412330047094107, guid: 1da65c6730dd0b043ae30f9365a21687,
         type: 3}

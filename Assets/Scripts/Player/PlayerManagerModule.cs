@@ -72,8 +72,9 @@ public class PlayerManagerModule : ManagerModule
         if (dudes.Count > 0)
         {
             Vector3 pos = GetLeaderPosistion();
-            pos += _currentCamSpeed * 0.75f;
-            cameraFocus.position = Vector3.Lerp(cameraFocus.position, pos, 0.1f);
+            pos += _currentCamSpeed * 0.5f;
+            cameraFocus.transform.DOMove(pos, 0.3f)
+                .SetEase(Ease.OutCubic);
         }
     }
 
