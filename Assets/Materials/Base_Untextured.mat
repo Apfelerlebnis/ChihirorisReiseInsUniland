@@ -12,7 +12,7 @@ Material:
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -23,3 +23,4 @@ Material:
     m_Floats: []
     m_Colors:
     - Color_F566BD4C: {r: 0.33570668, g: 0.37062585, b: 0.38679248, a: 0}
+  m_BuildTextureStacks: []

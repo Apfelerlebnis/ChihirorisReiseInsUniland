@@ -37437,6 +37437,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ab2edef1fd64b64cb83ca206f647261, type: 3}
+--- !u!1 &1688512716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7050974574349626618, guid: 1da65c6730dd0b043ae30f9365a21687,
+    type: 3}
+  m_PrefabInstance: {fileID: 1735795842}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1688512723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1688512716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4939b8ef6d234d4cbdeee44cb2a82b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exampleAssetA: {fileID: 11400000, guid: e0e9dd132971af54ea6156ac7fb72113, type: 2}
+  exampleAssetB: {fileID: 11400000, guid: 485772f6e0cc5f84db934f31b26544e5, type: 2}
 --- !u!1001 &1689107687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37975,12 +37995,27 @@ PrefabInstance:
     - target: {fileID: 4239491374259164461, guid: 1da65c6730dd0b043ae30f9365a21687,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0
+      value: 0.024021596
       objectReference: {fileID: 0}
     - target: {fileID: 4239491374259164461, guid: 1da65c6730dd0b043ae30f9365a21687,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0
+      value: 0.066037714
+      objectReference: {fileID: 0}
+    - target: {fileID: 4239491374259164461, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: m_AllowDynamicResolution
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384382862196486415, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6384382862196486415, guid: 1da65c6730dd0b043ae30f9365a21687,
+        type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7050974574349626618, guid: 1da65c6730dd0b043ae30f9365a21687,
         type: 3}
@@ -41665,7 +41700,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -47759,6 +47794,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8489935240131176128, guid: f628ba6d4ab8ef3469f9838a66c20a1e,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489935240131176128, guid: f628ba6d4ab8ef3469f9838a66c20a1e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489935240131176128, guid: f628ba6d4ab8ef3469f9838a66c20a1e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489935241099881357, guid: f628ba6d4ab8ef3469f9838a66c20a1e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489935241099881357, guid: f628ba6d4ab8ef3469f9838a66c20a1e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8489935242079838560, guid: f628ba6d4ab8ef3469f9838a66c20a1e,
         type: 3}
       propertyPath: m_Name
