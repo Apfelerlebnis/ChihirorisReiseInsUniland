@@ -2,6 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class PlayerManagerModule : ManagerModule
 {
@@ -22,8 +23,8 @@ public class PlayerManagerModule : ManagerModule
 
     public Vector3 MoveVector = Vector3.zero;
     public Vector3 ShouldVector = Vector3.zero;
-    [SerializeField] protected float accelerationSpeed = 0.1f;
-    public float MoveSpeed = 1f;
+    [SerializeField] protected float accelerationSpeed = 50f;
+    public float MoveSpeed = 20f;
 
 
     string[] animList = { "Salto", "Rolle 1", "Huepfer", "HuepferDreher", "Dreher" };
@@ -166,20 +167,24 @@ public class PlayerManagerModule : ManagerModule
 
         if (Input.GetAxis("JoystickHorizontal") > 0.1 || Input.GetAxis("JoystickHorizontal") < -0.1)
         {
-            playerInputVector.x = Input.GetAxis("JoystickHorizontal") * MoveSpeed;
+            playerInputVector.x = Input.GetAxis("JoystickHorizontal");
             AnimWalk();
             
         }
+        
 
         if (Input.GetAxis("JoystickVertical") > 0.1 || Input.GetAxis("JoystickVertical") < -0.1)
         {
-            playerInputVector.z = -Input.GetAxis("JoystickVertical") * MoveSpeed;
+            playerInputVector.z = -Input.GetAxis("JoystickVertical");
             AnimWalk();
         }
-
+        
+            
 
         if (playerInputVector == Vector3.zero)
         {
+            ShouldVector = Vector3.zero;
+            MoveVector = Vector3.zero;
             foreach (PlayerEntity dude in dudes)
             {
                 dude.ChangeState(PlayerEntity.EntityState.Waiting);
@@ -209,6 +214,9 @@ public class PlayerManagerModule : ManagerModule
             }
 
 
+            ShouldVector = new Vector3(playerInputVector.x * MoveSpeed, 0, playerInputVector.z * MoveSpeed);
+            MoveVector = Vector3.Lerp(MoveVector, ShouldVector, accelerationSpeed * Time.deltaTime * 20);
+
 
             Vector3 moveDir = playerInputVector.normalized;
             _lastMoveInput = moveDir;
@@ -218,7 +226,8 @@ public class PlayerManagerModule : ManagerModule
         void DoMove()
         {
             var leader = GetDudeLeader();
-            leader.GetComponent<CharacterController>().Move(_lastMoveInput * leader._nav.speed * leaderSpeed * _currentMoveSpeed * Time.deltaTime);
+
+            leader.GetComponent<CharacterController>().Move(MoveVector * leader._nav.speed * leaderSpeed * _currentMoveSpeed * Time.deltaTime);
 
             if (playerInputVector != Vector3.zero)
             {
