@@ -61,12 +61,12 @@ public class PlayerEntity : Character
         switch (entityState)
         {
             case EntityState.Waiting:
-                GetComponentInChildren<Light>().intensity = 0.1f;
+                //GetComponentInChildren<Light>().intensity = 0.1f;
                 break;
             case EntityState.Follow:
                 if(sneakingOn == false)
                 {
-                    GetComponentInChildren<Light>().intensity = 0.1f;
+                    //GetComponentInChildren<Light>().intensity = 0.1f;
                     _nav.speed = 2;
 
                 } else _nav.speed = 1;
@@ -76,7 +76,7 @@ public class PlayerEntity : Character
             case EntityState.Runaway:
                 if (sneakingOn == false)
                 {
-                    GetComponentInChildren<Light>().intensity = 0.1f;
+                    //GetComponentInChildren<Light>().intensity = 0.1f;
                     _nav.speed = 2;
 
                 }
@@ -243,7 +243,7 @@ public class PlayerEntity : Character
         {
             Debug.Log("owo");
             sneakingOn = true;
-            GetComponentInChildren<Light>().intensity = 0.1f;
+            //GetComponentInChildren<Light>().intensity = 0.1f;
             _nav.speed = 1.5f;
         }
         else
