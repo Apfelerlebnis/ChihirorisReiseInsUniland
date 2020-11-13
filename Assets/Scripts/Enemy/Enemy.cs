@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class Enemy : Character
 {
@@ -43,8 +45,20 @@ public class Enemy : Character
     public int damage = 1;
     public float activationRange = 3; // for Standing, Sleeping, Patrolling;
     public float attackRange = 1;
-    public float attackInterval = 0.5f;
+    public float attackInterval = 3f;
     private float _attackTimer = 0;
+
+    public Volume volumeProfile;
+    public float vignetteMin;
+    public float vignetteMax;
+    static float t = 0.8f;
+    Vignette vg;
+    bool attack = false;
+    float currentTime = 0f;
+    float timeToMove = 0.2f;
+    float currentTime2 = 0f;
+    float timeToMove2 = 0.2f;
+
 
     float animTimer = 0f;
     string[] animList = { "Idle2", "Idle3" };
@@ -62,6 +76,14 @@ public class Enemy : Character
     protected override void Start()
     {
         base.Start();
+        volumeProfile.GetComponent<Volume>();
+        Vignette tmp;
+        if (volumeProfile.profile.TryGet(out tmp))
+        {
+            vg = tmp;
+        }
+        else
+            Debug.Log("cannot find component :(");
 
         enemyState = State.Standing;
 
@@ -71,6 +93,27 @@ public class Enemy : Character
     protected override void Update()
     {
         base.Update();
+        
+        if (attack == true)
+        {
+            t += 0.1f * Time.deltaTime;
+
+            if (currentTime <= timeToMove)
+            {
+                currentTime += Time.deltaTime;
+                vg.intensity.value = Mathf.Lerp(0.5f, 0.7f, currentTime / timeToMove);
+                if (currentTime > timeToMove && currentTime2 <= timeToMove2)
+                {
+                    currentTime += Time.deltaTime;
+                    vg.intensity.value = Mathf.Lerp(0.7f, 0.5f, currentTime / timeToMove);
+                    float temp = vignetteMax;
+                    vignetteMax = vignetteMin;
+                    vignetteMin = temp;
+                    t = 0.8f;
+                    attack = false;
+                }
+            }  
+        }
 
         switch (enemyType)
         {
@@ -217,11 +260,19 @@ public class Enemy : Character
 
     void DoAttack()
     {
+        currentTime = 0f;
+        timeToMove = 0.2f;
+        currentTime2 = 0f;
+        timeToMove2 = 0.2f;
+        GetComponentInChildren<UnityEngine.Animator>().Play("Attack");
         _attackTimer += Time.deltaTime;
         if (_attackTimer < attackInterval) return;
         _attackTimer = 0;
-        GetComponentInChildren<UnityEngine.Animator>().SetTrigger("Attack");
+        
+        attack = true;
         _player.GotHit(damage);
+
+
     }
 
 
