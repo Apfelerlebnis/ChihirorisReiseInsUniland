@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Canopy
+  m_Shader: {fileID: -6465566751694194690, guid: 4c34f479cca7e5946b31e46b748ee6f9,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_68720D2D:
+        m_Texture: {fileID: 2800000, guid: 091fe57a130c6b246a12c3f8a4228951, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_BEB6CF36_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 091fe57a130c6b246a12c3f8a4228951, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_360CED32: 0.17
+    - Vector1_374DDD1F: 1.26
+    - Vector1_A7D9F390: 0.11
+    m_Colors:
+    - Color_1C35DD3A: {r: 0.34091312, g: 0.4389013, b: 0.4433962, a: 0}
+  m_BuildTextureStacks: []
